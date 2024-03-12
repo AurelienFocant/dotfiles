@@ -21,3 +21,11 @@ done < $casks
 #-----------------
 # Does the same for formulae
 #-----------------
+
+
+#-----------------
+# Could be checking if the soft is already installed with
+#
+# brew info name-of-software
+# need to grep it or something
+#-----------------
