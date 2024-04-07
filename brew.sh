@@ -6,7 +6,7 @@
 # If not, tries to install it
 #-----------------
 
-casks="./cask_somebrew"
+casks="./cask_homebrew"
 sort $casks -o $casks
 
 while read cask; do
@@ -22,6 +22,8 @@ done < $casks
 # Does the same for formulae
 #-----------------
 
+formulae="./formulae_homebrew"
+cat $formulae | xargs brew install --formula
 
 #-----------------
 # Could be checking if the soft is already installed with
