@@ -8,3 +8,5 @@ alias llt="/bin/ls -G -a -l -h"
 ########################################################
 alias gww="gcc -Wall -Wextra -Werror"
 alias ggg="gcc -Wall -Wextra -Werror -g -O0"
+########################################################
+alias gst="git status"

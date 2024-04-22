@@ -14,3 +14,5 @@
 # - Customize color output
 # - Create aliases (shortcuts for Git subcommands)
 #- Add endpoint shortcuts for commonly used
+[init]
+	defaultbranch = main
