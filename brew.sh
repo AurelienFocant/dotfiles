@@ -6,7 +6,7 @@
 # If not, tries to install it
 #-----------------
 
-casks="./cask_homebrew"
+casks="$PWD/casks_homebrew"
 sort $casks -o $casks
 
 while read cask; do

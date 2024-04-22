@@ -17,6 +17,9 @@ set mouse=a
 set laststatus=2
 set statusline=%F
 """""""""""""""""""""""""
+"modifies color of matching brackets"
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
+"""""""""""""""""""""""""
 
 """""""""""""""""""""""""
 " modifies default settings of netrw "

@@ -1,4 +1,11 @@
 # --------------------------------------------------------------------
+# Should write a script to make symlinks with all dotfiles
+# that need to go in ~ folder
+# --------------------------------------------------------------------
+
+dotfiles="$PWD"
+
+# --------------------------------------------------------------------
 # Also should write a script to make Download folder the one on iCloud
 # --------------------------------------------------------------------
 
