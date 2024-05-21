@@ -8,8 +8,8 @@ fi
 HISTFILE=~/.zsh_history
 
 # How many commands to store in history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=99
+SAVEHIST=99
 
 alias francinette=/Users/aurelienfocant/francinette/tester.sh
 

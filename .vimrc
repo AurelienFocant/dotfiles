@@ -8,6 +8,10 @@ syntax on
 set hlsearch
 set smartindent
 """""""""""""""""""""""""
+set foldmethod=syntax
+highlight Folded ctermbg=black ctermfg=white
+set foldlevel=2
+"""""""""""""""""""""""""
 
 """""""""""""""""""""""""
 set mouse=a
@@ -18,7 +22,7 @@ set laststatus=2
 set statusline=%F
 """""""""""""""""""""""""
 "modifies color of matching brackets"
-hi MatchParen cterm=bold ctermbg=none ctermfg=red
+hi MatchParen cterm=bold ctermbg=none ctermfg=darkmagenta
 """""""""""""""""""""""""
 
 """""""""""""""""""""""""
