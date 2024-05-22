@@ -9,8 +9,10 @@ set hlsearch
 set smartindent
 """""""""""""""""""""""""
 set foldmethod=syntax
-highlight Folded ctermbg=black ctermfg=white
-set foldlevel=2
+set foldlevelstart=0 foldnestmax=1
+highlight Folded ctermbg=none ctermfg=white
+set foldcolumn=1
+highlight FoldColumn ctermbg=none ctermfg=white
 """""""""""""""""""""""""
 
 """""""""""""""""""""""""
