@@ -48,3 +48,9 @@ defaults write com.apple.dock "mru-spaces" -bool "false" && killall Dock
 
 # Mission Control : Group Windows by application
 defaults write com.apple.dock "expose-group-apps" -bool "true" && killall Dock
+
+# Specify the preferences directory for iterm2 settings
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm_settings"
+
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true

@@ -9,7 +9,7 @@ set hlsearch
 set smartindent
 """""""""""""""""""""""""
 set foldmethod=syntax
-set foldlevelstart=0 foldnestmax=1
+set foldlevelstart=1 foldnestmax=1
 highlight Folded ctermbg=none ctermfg=white
 set foldcolumn=1
 highlight FoldColumn ctermbg=none ctermfg=white
@@ -30,6 +30,7 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=darkmagenta
 """""""""""""""""""""""""
 " modifies default settings of netrw "
 let g:netrw_bufsettings = "noma nomod nu rnu nowrap ro nobl"
+let g:netrw_winsize = 35
 """""""""""""""""""""""""
 
 """""""""""""""""""""""""
