@@ -36,3 +36,6 @@ alias paco=/Users/aurelienfocant/francinette/tester.sh
 
 ########################################################
 export BBR=born2beroot.duckdns.org
+########################################################
+export PATH=$PATH:/Users/aurelienfocant/my_scripts
+alias gut=git_update.sh
