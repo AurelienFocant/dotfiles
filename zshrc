@@ -19,8 +19,8 @@ alias gg="clang -fsanitize=address -fsanitize=undefined -Wall -Wextra -Werror -g
 alias gut=git_update.sh
 alias gst="git status"
 
-alias francinette=/Users/aurelienfocant/francinette/tester.sh
-alias paco=/Users/aurelienfocant/francinette/tester.sh
+alias francinette=$HOME/francinette/tester.sh
+alias paco=$HOME/francinette/tester.sh
 
 alias python=python3
 alias pip=pip3
