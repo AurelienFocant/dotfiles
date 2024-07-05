@@ -53,4 +53,4 @@ defaults write com.apple.dock "expose-group-apps" -bool "true" && killall Dock
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
 # Specify the preferences directory for iterm2 settings
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm2_settings"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/dotfiles/iTerm2_settings"
