@@ -43,5 +43,5 @@ SAVEHIST=99
 #----------------------------------------------------------------------------------------#
 export BBR=born2beroot.duckdns.org
 
-export PATH=$PATH:/Users/aurelienfocant/my_scripts
+export PATH=$PATH:$HOME/my_scripts
 #----------------------------------------------------------------------------------------#
