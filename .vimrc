@@ -2,14 +2,15 @@
 set number
 set relativenumber
 """""""""""""""""""""""""
-
+set tabstop=4
+set shiftwidth=4
 """""""""""""""""""""""""
 syntax on
 set hlsearch
 set smartindent
 """""""""""""""""""""""""
 set foldmethod=syntax
-set foldlevelstart=1 foldnestmax=1
+set foldlevelstart=0 foldnestmax=1
 highlight Folded ctermbg=none ctermfg=white
 set foldcolumn=1
 highlight FoldColumn ctermbg=none ctermfg=white
