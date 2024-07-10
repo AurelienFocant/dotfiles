@@ -5,7 +5,7 @@ sudo apt install ufw
 #change port in /etc/sshd_config
 sudo apt install git
 sudo apt install gcc
-sudo apt install 
+sudo apt install valgrind
 sudo apt install 
 sudo apt install 
 sudo apt install 
