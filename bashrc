@@ -6,11 +6,11 @@ if uname -a | awk '{print $NF}' | grep --silent arm; then
 	alias lst="/bin/ls -G -l -h"
 	alias llt="/bin/ls -G -a -l -h"
 elif uname -a | awk '{print $1}' | grep --silent Linux; then
-	alias ls="ls -l -h -G --color=auto"
-	alias lh="ls -l -h -G -a --color=auto"
-	alias la="ls -l -h -G -a --color=auto"
-	alias lst="/bin/ls -lh -T --color=auto"
-	alias lat="/bin/ls -lha -T --color=auto"
+	alias ls="ls -l -h -G -v --color=auto"
+	alias lh="ls -l -h -G -a -v --color=auto"
+	alias la="ls -l -h -G -a -v --color=auto"
+	alias lst="/bin/ls -lh -v --color=auto"
+	alias lat="/bin/ls -lha -v --color=auto"
 else
 	alias ls="ls -l -h -G"
 	alias lh="ls -l -h -G -a"
