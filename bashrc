@@ -7,16 +7,16 @@ if uname -a | awk '{print $NF}' | grep --silent arm; then
 	alias llt="/bin/ls -G -a -l -h"
 elif uname -a | awk '{print $1}' | grep --silent Linux; then
 	alias ls="ls -l -h -G --color=auto"
-	alias lh="ls -l -h -G -a"
-	alias la="ls -l -h -G -a"
-	alias lst="/bin/ls -lh -T"
-	alias lat="/bin/ls -lha -T"
+	alias lh="ls -l -h -G -a --color=auto"
+	alias la="ls -l -h -G -a --color=auto"
+	alias lst="/bin/ls -lh -T --color=auto"
+	alias lat="/bin/ls -lha -T --color=auto"
 else
 	alias ls="ls -l -h -G"
 	alias lh="ls -l -h -G -a"
 	alias la="ls -l -h -G -a"
-	alias lst="/bin/ls -lh -T"
-	alias lat="/bin/ls -lha -T"
+	alias lst="/bin/ls -lhG -T"
+	alias lat="/bin/ls -lhaG -T"
 fi
 
 alias gw="gcc -Wall -Wextra -Werror"
