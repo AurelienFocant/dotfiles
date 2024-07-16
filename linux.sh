@@ -5,11 +5,5 @@ sudo apt install ufw
 #change port in /etc/sshd_config
 sudo apt install git
 sudo apt install gcc
-<<<<<<< Updated upstream
 sudo apt install valgrind
-=======
 sudo apt install vim-gtk3
->>>>>>> Stashed changes
-sudo apt install 
-sudo apt install 
-sudo apt install 
