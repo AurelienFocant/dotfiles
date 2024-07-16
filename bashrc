@@ -6,7 +6,7 @@ if uname -a | awk '{print $NF}' | grep --silent arm; then
 	alias lst="/bin/ls -G -l -h"
 	alias llt="/bin/ls -G -a -l -h"
 elif uname -a | awk '{print $1}' | grep --silent Linux; then
-	alias ls="ls -l -h -G"
+	alias ls="ls -l -h -G --color=auto"
 	alias lh="ls -l -h -G -a"
 	alias la="ls -l -h -G -a"
 	alias lst="/bin/ls -lh -T"
