@@ -36,6 +36,7 @@ MAIL=afocant@student.s19.be
 export USER MAIL
 #----------------------------------------------------------------------------------------#
 export BBR=born2beroot.duckdns.org
+alias bbr="ssh aurel@$BBR -X -p 4242"
 export PATH=$PATH:$HOME/my_scripts
 #----------------------------------------------------------------------------------------#
 
