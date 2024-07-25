@@ -19,19 +19,16 @@ else
 	alias lat="/bin/ls -lhaG -T"
 fi
 
-alias gw="gcc -Wall -Wextra -Werror"
-alias gg="clang -fsanitize=address -fsanitize=undefined -Wall -Wextra -Werror -g -O0"
-
 alias gst="git status"
-alias gut=$HOME/my_scripts/git_update.sh
+alias python=python3
+alias pip=pip3
 
+export PATH=$PATH:$HOME/my_scripts
+alias gut=$HOME/my_scripts/git_update.sh
 alias tags=$HOME/my_scripts/get_ctags.sh
 
 alias francinette=$HOME/francinette/tester.sh
 alias paco=$HOME/francinette/tester.sh
-
-alias python=python3
-alias pip=pip3
 
 if [ -f ~/.zsh_aliases ]; then
 	source ~/.zsh_aliases
@@ -45,11 +42,23 @@ export USER MAIL
 #----------------------------------------------------------------------------------------#
 export BBR=born2beroot.duckdns.org
 alias bbr="ssh aurel@$BBR -X -p 4242"
-export PATH=$PATH:$HOME/my_scripts
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
-HISTFILE=~/.zsh_history
-HISTSIZE=99
-SAVEHIST=99
+if echo $0 | grep zsh; then
+	HISTFILE=$HOME/.zsh_history
+	setopt append_history # append rather then overwrite
+	setopt inc_append_history # add history immediately after typing a command
+	setopt sharehistory
+
+elif echo $0 | grep bash; then
+	HISTFILE=$HOME/.bash_history
+	# When the shell exits, append to the history file instead of overwriting it
+   shopt -s histappend
+   # After each command, append to the history file and reread it
+   export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+fi
+HISTSIZE=9999
+SAVEHIST=9999
 #----------------------------------------------------------------------------------------#
