@@ -20,6 +20,9 @@ else
 fi
 
 alias gst="git status"
+alias gil="git log --oneline --graph --color=always"
+alias gila="git log --oneline --graph --all --color=always"
+
 alias python=python3
 alias pip=pip3
 
