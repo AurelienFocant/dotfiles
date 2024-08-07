@@ -3,8 +3,8 @@ if uname -a | awk '{print $NF}' | grep --silent arm; then
 	alias ls="ls -l -h -G -D \"\"" 
 	alias ll="ls -a -l -G -h -D \"\""
 	alias la="ls -a -l -G -h -D \"\""
-	alias lst="/bin/ls -G -l -h"
-	alias llt="/bin/ls -G -a -l -h"
+	alias lst="/bin/ls -G -l -h -tr"
+	alias lat="/bin/ls -G -l -h -tr -a"
 elif uname -a | awk '{print $1}' | grep --silent Linux; then
 	alias ls="ls -l -h -G -v --color=auto"
 	alias lh="ls -l -h -G -a -v --color=auto"
