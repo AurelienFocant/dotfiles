@@ -5,7 +5,6 @@ set smartindent
 syntax on
 set mouse=a
 set hlsearch
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=4
 set shiftwidth=4
@@ -17,6 +16,11 @@ set foldlevelstart=0 foldnestmax=1
 highlight Folded ctermbg=none ctermfg=white
 highlight FoldColumn ctermbg=none ctermfg=white
 set foldcolumn=1
+nnoremap <space> za
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags+=misc/tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -46,4 +50,3 @@ autocmd FileType help  setlocal relativenumber
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tags+=misc/tags
