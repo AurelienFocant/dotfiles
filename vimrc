@@ -41,6 +41,13 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=darkmagenta
 let g:netrw_bufsettings = "noma nomod nu rnu nowrap ro nobl"
 let g:netrw_winsize = 15
 let g:netrw_liststyle= 3
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Checks if there is a file open after Vim starts up,
+" and if not, open Netrw as :Le.
+augroup InitNetrw
+  autocmd!
+  autocmd VimEnter * if expand("%") == "" | Le | endif
+augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
