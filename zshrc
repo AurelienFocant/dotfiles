@@ -19,19 +19,26 @@ else
 	alias lat="/bin/ls -lhaG -T"
 fi
 
-alias gst="git status"
 alias gil="git log --oneline --graph --color=always"
 alias gila="git log --oneline --graph --all --color=always"
 
-alias python=python3
-alias pip=pip3
-
 export PATH=$PATH:$HOME/my_scripts
-alias gut=$HOME/my_scripts/git_update.sh
+export PATH=$PATH:$HOME/my_scripts/git_wrappers
+alias gut=$HOME/my_scripts/git_wrappers/git_update.sh
+alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
+
 alias tags=$HOME/my_scripts/get_ctags.sh
+alias prot=$HOME/my_scripts/my_prototypes.sh
+
+alias svi="vim -S Session.vim -c 'Le | Le'"
+alias svim="vim -S Session.vim -c 'Le | Le'"
+
 
 alias francinette=$HOME/francinette/tester.sh
 alias paco=$HOME/francinette/tester.sh
+
+alias python=python3
+alias pip=pip3
 
 if [ -f ~/.zsh_aliases ]; then
 	source ~/.zsh_aliases
