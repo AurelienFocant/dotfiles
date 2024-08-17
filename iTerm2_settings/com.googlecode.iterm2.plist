@@ -2111,12 +2111,16 @@
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.556640625</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.556640625</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.55664050579071045</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
@@ -2165,12 +2169,16 @@
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.72329717874526978</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.72329717874526978</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.723297119140625</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
@@ -2236,12 +2244,16 @@
 			<string></string>
 			<key>Cursor Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.3843137254901961</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.40000000000000002</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.81568627450980391</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -2758,7 +2770,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 18</string>
+			<string>Monaco 15</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
