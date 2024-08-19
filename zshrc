@@ -30,9 +30,9 @@ alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
 alias tags=$HOME/my_scripts/get_ctags.sh
 alias prot=$HOME/my_scripts/my_prototypes.sh
 
-alias svi="vim -S Session.vim -c 'Le | Le'"
-alias svim="vim -S Session.vim -c 'Le | Le'"
-
+[ -d ./misc ] && dir="./misc" || dir="."
+alias svi="vim -S $dir/Session.vim -c 'Le | Le'"
+alias svim="vim -S $dir/Session.vim -c 'Le | Le'"
 
 alias francinette=$HOME/francinette/tester.sh
 alias paco=$HOME/francinette/tester.sh
