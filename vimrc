@@ -34,15 +34,27 @@ nnoremap × <C-w>W
 nnoremap ó <C-w>s
 nnoremap ö <C-w>v
 nnoremap ã <C-w>c
+nnoremap ø <C-w>x
 nnoremap ô <C-w>t
 nnoremap â <C-w>b
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Custom commands for mksession and refreshing Le"
-command Q mksession!|qa
 command L 15Le
 command K Le|Le
+
+command Q call SaveSession()
+function! SaveSession()
+    if isdirectory('misc')
+        execute 'mksession! misc/Session.vim'
+    else
+        execute 'mksession! Session.vim'
+    endif
+    execute 'qa'
+endfunction
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command T rightb vert ter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
