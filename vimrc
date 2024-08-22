@@ -37,12 +37,16 @@ nnoremap ã <C-w>c
 nnoremap ø <C-w>x
 nnoremap ô <C-w>t
 nnoremap â <C-w>b
+nnoremap ½ <C-w>=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Custom commands for mksession and refreshing Le"
-command L 15Le
-command K Le|Le
+command L call OpenNetrw()
+function! OpenNetrw()
+	execute 'Le | vertical resize 23'
+	"execute '<C-w>='
+endfunction
 
 command Q call SaveSession()
 function! SaveSession()
@@ -84,7 +88,7 @@ let g:netrw_liststyle= 3
 " and if not, open Netrw as :Le
 augroup InitNetrw
   autocmd!
-  autocmd VimEnter * if expand("%") == "" | Le | endif
+  autocmd VimEnter * if expand("%") == "" | Le | vertical resize 22 | endif
 augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
