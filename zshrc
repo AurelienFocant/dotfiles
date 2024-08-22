@@ -19,20 +19,20 @@ else
 	alias lat="/bin/ls -lhaG -T"
 fi
 
-alias gil="git log --oneline --graph --color=always"
-alias gila="git log --oneline --graph --all --color=always"
-
+#----------------------------------------------------------------------------------------#
 export PATH=$PATH:$HOME/my_scripts
 export PATH=$PATH:$HOME/my_scripts/git_wrappers
-alias gut=$HOME/my_scripts/git_wrappers/git_update.sh
-alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
-
+#----------------------------------------------------------------------------------------#
 alias tags=$HOME/my_scripts/get_ctags.sh
 alias prot=$HOME/my_scripts/my_prototypes.sh
-
-[ -d ./misc ] && dir="./misc" || dir="."
-alias svi="vim -S $dir/Session.vim -c 'Le | Le'"
-alias svim="vim -S $dir/Session.vim -c 'Le | Le'"
+#----------------------------------------------------------------------------------------#
+alias gil="git log --oneline --graph --color=always"
+alias gila="git log --oneline --graph --all --color=always"
+alias gut=$HOME/my_scripts/git_wrappers/git_update.sh
+alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
+#----------------------------------------------------------------------------------------#
+alias svi=$HOME/my_scripts/vim_session.sh
+#----------------------------------------------------------------------------------------#
 
 alias francinette=$HOME/francinette/tester.sh
 alias paco=$HOME/francinette/tester.sh
