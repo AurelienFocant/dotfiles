@@ -20,8 +20,11 @@ else
 fi
 
 #----------------------------------------------------------------------------------------#
+alias src="source ~/.zshrc"
 export PATH=$PATH:$HOME/my_scripts
 export PATH=$PATH:$HOME/my_scripts/git_wrappers
+export PATH=$PATH:$HOME/my_scripts/vim
+export PATH=$PATH:$HOME/my_scripts/colors
 #----------------------------------------------------------------------------------------#
 alias tags=$HOME/my_scripts/get_ctags.sh
 alias prot=$HOME/my_scripts/my_prototypes.sh
