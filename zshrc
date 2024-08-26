@@ -34,7 +34,7 @@ alias gila="git log --oneline --graph --all --color=always"
 alias gut=$HOME/my_scripts/git_wrappers/git_update.sh
 alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
 #----------------------------------------------------------------------------------------#
-alias svi=$HOME/my_scripts/vim_session.sh
+alias svi=$HOME/my_scripts/vim/vim_session.sh
 #----------------------------------------------------------------------------------------#
 
 alias francinette=$HOME/francinette/tester.sh
