@@ -75,3 +75,4 @@ fi
 HISTSIZE=9999
 SAVEHIST=9999
 #----------------------------------------------------------------------------------------#
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
