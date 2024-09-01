@@ -41,6 +41,7 @@ nnoremap ½ <C-w>=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command K Le | Le
 "Custom commands for mksession and refreshing Le"
 command L call OpenNetrw()
 function! OpenNetrw()
