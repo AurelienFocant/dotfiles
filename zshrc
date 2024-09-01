@@ -76,3 +76,8 @@ HISTSIZE=9999
 SAVEHIST=9999
 #----------------------------------------------------------------------------------------#
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+if [ -f ~/.local/bin/oh-my-posh ]; then
+	export PATH=$PATH:/home/aurel/.local/bin
+	eval "$(oh-my-posh init zsh --config ~/.local/bin/stelbent-compact.minimal.omp.json)" 
+fi
