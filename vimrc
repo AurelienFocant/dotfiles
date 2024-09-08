@@ -60,6 +60,7 @@ function! SaveSession()
 endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command T rightb vert ter
+command R term
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -82,7 +83,7 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=darkmagenta
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " modifies default settings of netrw "
 let g:netrw_bufsettings = "noma nomod nu rnu nowrap ro nobl"
-let g:netrw_winsize = 15
+let g:netrw_winsize = 20
 let g:netrw_liststyle= 3
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Checks if there is a file open after Vim starts up,
