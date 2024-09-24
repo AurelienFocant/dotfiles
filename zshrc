@@ -1,4 +1,4 @@
-#----------------------------------------------------------------------------------------#
+
 if uname -a | awk '{print $NF}' | grep --silent arm; then
 	alias ls="ls -l -h -G -D \"\"" 
 	alias ll="ls -a -l -G -h -D \"\""
