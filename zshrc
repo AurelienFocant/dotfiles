@@ -1,4 +1,3 @@
-
 if uname -a | awk '{print $NF}' | grep --silent arm; then
 	alias ls="ls -l -h -G -D \"\"" 
 	alias ll="ls -a -l -G -h -D \"\""
@@ -37,15 +36,13 @@ alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
 alias svi=$HOME/my_scripts/vim/vim_session.sh
 #----------------------------------------------------------------------------------------#
 
-alias francinette=$HOME/francinette/tester.sh
-alias paco=$HOME/francinette/tester.sh
-
 alias python=python3
 alias pip=pip3
 
 if [ -f ~/.zsh_aliases ]; then
 	source ~/.zsh_aliases
 fi
+
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
