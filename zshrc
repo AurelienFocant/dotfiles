@@ -70,8 +70,8 @@ elif echo $0 | grep bash; then
    export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 fi
-HISTSIZE=
-SAVEHIST=
+HISTSIZE=99999999
+SAVEHIST=99999999
 #----------------------------------------------------------------------------------------#
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
