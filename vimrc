@@ -20,27 +20,6 @@ nnoremap <space> za
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"remaps to manage windows with ALT key on macOS"
-nnoremap è <C-w>h
-nnoremap È <C-w>H
-nnoremap ê <C-w>j
-nnoremap Ê <C-w>J
-nnoremap ë <C-w>k
-nnoremap Ë <C-w>K
-nnoremap ì <C-w>l
-nnoremap Ì <C-w>L
-nnoremap ÷ <C-w>w
-nnoremap × <C-w>W
-nnoremap ó <C-w>s
-nnoremap ö <C-w>v
-nnoremap ã <C-w>c
-nnoremap ø <C-w>x
-nnoremap ô <C-w>t
-nnoremap â <C-w>b
-nnoremap ½ <C-w>=
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command K Le | Le
 "Custom commands for mksession and refreshing Le"
 command L call OpenNetrw()
