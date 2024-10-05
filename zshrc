@@ -35,6 +35,13 @@ alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
 #----------------------------------------------------------------------------------------#
 alias svi=$HOME/my_scripts/vim/vim_session.sh
 #----------------------------------------------------------------------------------------#
+alias pd="pushd"
+alias dv="dirs -v"
+pdv () {
+	pushd -q $@
+	dirs -v
+}
+#----------------------------------------------------------------------------------------#
 
 alias python=python3
 alias pip=pip3
