@@ -1,8 +1,13 @@
+Host b2b
+	User aurel
+	HostName born2beroot.duckdns.org
+	Port 4242
+
 Host vogsphere-v2.s19.be
-    ForwardX11 no
+	ForwardX11 no
 
 Host github.com
-    ForwardX11 no
+	ForwardX11 no
 
 Host *
-    ForwardX11 yes
+	ForwardX11 yes

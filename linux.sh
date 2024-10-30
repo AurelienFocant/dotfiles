@@ -10,7 +10,7 @@ sudo ufw enable
 sudo ufw allow 4242/tcp
 
 #change port in /etc/sshd_config
-echo "port 4242" >>/etc/sshd_config
+echo "Port 4242" >>/etc/sshd_config
 
 ## get ssh key to github to clone dotfiles
 sudo apt install xsel -y
