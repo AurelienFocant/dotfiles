@@ -18,7 +18,7 @@ sudo apt install xsel -y
 ssh-keygen -t ed25519
 #confirm keygen
 
-cat ~/.ssh/id_ed25519.pub | tee <(xsel -b)
+cat ~/.ssh/id_ed25519.pub | tee >(xsel -b)
 #prompt to copy key into github
 
 #install git and clone dotfiles
