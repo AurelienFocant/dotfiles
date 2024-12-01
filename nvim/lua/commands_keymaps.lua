@@ -4,3 +4,6 @@ vim.api.nvim_create_user_command(
   "NvimTreeToggle",
   {bang = false}
 )
+
+-- Remap to escape terminal mode
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-N>", { noremap = true })
