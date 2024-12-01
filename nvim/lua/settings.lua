@@ -1,5 +1,5 @@
 -- Source vimrc
-vim.cmd('source ~/.vimrc') 
+--vim.cmd('source ~/.vimrc') 
 
 -- Theme setup
 vim.opt.termguicolors = true
