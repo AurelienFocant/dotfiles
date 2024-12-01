@@ -29,6 +29,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "*",
 	command = "if &buftype == 'terminal' | :startinsert | endif"
 })
+
+-- Or only on new terminal:
+--vim.api.nvim_create_autocmd("TermOpen", {
+--	pattern = "*",
+--	command = "startinsert"
+--})
 ---------------------------------------------------
 
 -- Remaps for navigating windows with ALT
