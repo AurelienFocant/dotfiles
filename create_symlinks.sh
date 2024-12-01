@@ -9,3 +9,6 @@ files="zshrc vimrc gitconfig bashrc ssh/config"
 for file in $files; do
 	ln -sf "$dotfile_dir/$file" "$HOME/.$file"
 done
+
+mkdir -p ~/.config
+ln -sf "$dotfile_dir/nvim" "$HOME/.config/nvim"
