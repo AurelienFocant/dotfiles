@@ -51,6 +51,7 @@ return packer.startup(function(use)
 		},
 	}
 
+	use 'ludovicchabant/vim-gutentags'
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

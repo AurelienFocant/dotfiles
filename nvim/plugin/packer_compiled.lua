@@ -93,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aurelienfocant/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-gutentags"] = {
+    loaded = true,
+    path = "/Users/aurelienfocant/.local/share/nvim/site/pack/packer/start/vim-gutentags",
+    url = "https://github.com/ludovicchabant/vim-gutentags"
   }
 }
 

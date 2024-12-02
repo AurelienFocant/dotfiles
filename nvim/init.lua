@@ -1,4 +1,6 @@
 require("settings")
-require("plugins")
-require("nvimtree")
 require("commands_keymaps")
+
+require("plugins/packer")
+require("plugins/nvimtree")
+require("plugins/gutentags")
