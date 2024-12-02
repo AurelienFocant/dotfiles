@@ -28,8 +28,8 @@ export PATH=$PATH:$HOME/my_scripts/colors
 alias tags=$HOME/my_scripts/get_ctags.sh
 alias prot=$HOME/my_scripts/my_prototypes.sh
 #----------------------------------------------------------------------------------------#
-alias gil="git log --oneline --graph --color=always"
-alias gila="git log --oneline --graph --all --color=always"
+alias gil="git log --oneline --graph --color=always -n20"
+alias gila="git log --oneline --graph --all --color=always -n20"
 alias gut=$HOME/my_scripts/git_wrappers/git_update.sh
 alias gst=$HOME/my_scripts/git_wrappers/git_status_colored.sh
 #----------------------------------------------------------------------------------------#
