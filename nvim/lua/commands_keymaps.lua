@@ -5,6 +5,13 @@ vim.api.nvim_create_user_command(
   {bang = false}
 )
 
+-- Custom command for prototypes
+vim.api.nvim_create_user_command(
+  'P',
+  "! ~/my_scripts/my_prototypes.sh",
+  {bang = false}
+)
+
 ---------------------------------------------------
 -- TERMINAL Commands
 -- Remap to escape terminal mode
