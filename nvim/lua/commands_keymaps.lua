@@ -86,3 +86,4 @@ set_keymaps_all("<A-k>", "<C-w>k", true) -- Up
 set_keymaps_all("<A-l>", "<C-w>l", true) -- Right
 set_keymaps_all("<A-s>", "<C-w>s", true) -- Split
 set_keymaps_all("<A-v>", "<C-w>v", true) -- Vertical Split
+set_keymaps_all("<A-x>", "<C-w>x", true) -- Switch positions
