@@ -19,6 +19,24 @@ vim.api.nvim_create_user_command(
   {bang = false}
 )
 
+
+---------------------------------------
+-- Q command for quit and Session
+local function Save_Session()
+    if (vim.fn.isdirectory('misc') == 1) then
+        vim.cmd('mksession! misc/Session.vim')
+	end
+	vim.cmd("qa")
+end
+
+vim.api.nvim_create_user_command(
+  'Q',
+  Save_Session,
+  {bang = false}
+)
+---------------------------------------
+
+
 ---------------------------------------------------
 -- TERMINAL Commands
 -- Remap to escape terminal mode
@@ -50,6 +68,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 --	command = "startinsert"
 --})
 ---------------------------------------------------
+
 
 -- Set keymaps for Windows Navigation
 function set_keymaps_all(new, old, noremap)
