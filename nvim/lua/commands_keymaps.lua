@@ -44,6 +44,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 --})
 ---------------------------------------------------
 
+-- Set keymaps for Windows Navigation
 function set_keymaps_all(new, old, noremap)
 	vim.api.nvim_set_keymap("t", new, "<C-\\><C-N>" .. old, { noremap = noremap })
 	vim.api.nvim_set_keymap("i", new, "<C-\\><C-N>" .. old, { noremap = noremap })
@@ -57,3 +58,5 @@ set_keymaps_all("<A-h>", "<C-w>h", true) -- Left
 set_keymaps_all("<A-j>", "<C-w>j", true) -- Down
 set_keymaps_all("<A-k>", "<C-w>k", true) -- Up
 set_keymaps_all("<A-l>", "<C-w>l", true) -- Right
+set_keymaps_all("<A-s>", "<C-w>s", true) -- Split
+set_keymaps_all("<A-v>", "<C-w>v", true) -- Vertical Split
