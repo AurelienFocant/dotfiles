@@ -1,13 +1,18 @@
 local HOME = os.getenv("HOME")
+local TERM = os.getenv("TERM_PROGRAM")
 
 vim.opt.termguicolors = true
 -- Theme setup
 
--- ------ catppucin Theme
--- vim.cmd.colorscheme "catppuccin-frappe" -- latte, frappe, macchiato, mocha
+if (TERM == "WezTerm") then
+	-- ------ catppucin Theme
+	vim.cmd.colorscheme "catppuccin-latte" -- latte, frappe, macchiato, mocha
+else
+	-- ------ tokyonight Theme
+	vim.cmd.colorscheme "tokyonight-night" -- day, night, storm, moon
+end
 
--- ------ tokyonight Theme
-vim.cmd.colorscheme "tokyonight-night" -- day, night, storm, moon
+--vim.cmd.colorscheme "catppuccin-latte"
 
 -- Line Number Colors
 vim.opt.number = true
