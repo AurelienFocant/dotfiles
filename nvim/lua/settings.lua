@@ -2,8 +2,12 @@ local HOME = os.getenv("HOME")
 
 vim.opt.termguicolors = true
 -- Theme setup
-vim.g.tokyonight_style = "night"
-vim.cmd[[colorscheme tokyonight]]
+
+-- ------ catppucin Theme
+-- vim.cmd.colorscheme "catppuccin-frappe" -- latte, frappe, macchiato, mocha
+
+-- ------ tokyonight Theme
+vim.cmd.colorscheme "tokyonight-night" -- day, night, storm, moon
 
 -- Line Number Colors
 vim.opt.number = true

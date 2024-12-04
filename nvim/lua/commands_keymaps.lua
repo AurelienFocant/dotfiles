@@ -44,16 +44,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
 --})
 ---------------------------------------------------
 
--- Remaps for navigating windows with ALT
-vim.api.nvim_set_keymap("t", "<A-h>", "<C-\\><C-N><C-w>h", { noremap = true })
-vim.api.nvim_set_keymap("t", "<A-j>", "<C-\\><C-N><C-w>j", { noremap = true })
-vim.api.nvim_set_keymap("t", "<A-k>", "<C-\\><C-N><C-w>k", { noremap = true })
-vim.api.nvim_set_keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", { noremap = true })
-vim.api.nvim_set_keymap("i", "<A-h>", "<C-\\><C-N><C-w>h", { noremap = true })
-vim.api.nvim_set_keymap("i", "<A-j>", "<C-\\><C-N><C-w>j", { noremap = true })
-vim.api.nvim_set_keymap("i", "<A-k>", "<C-\\><C-N><C-w>k", { noremap = true })
-vim.api.nvim_set_keymap("i", "<A-l>", "<C-\\><C-N><C-w>l", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true })
+function set_keymaps_all(new, old, noremap)
+	vim.api.nvim_set_keymap("t", new, "<C-\\><C-N>" .. old, { noremap = noremap })
+	vim.api.nvim_set_keymap("i", new, "<C-\\><C-N>" .. old, { noremap = noremap })
+	vim.api.nvim_set_keymap("n", new, old, { noremap = noremap })
+end
+
+set_keymaps_all("<A-c>", "<C-w>c", true) -- Close
+set_keymaps_all("<A-t>", "<C-w>t", true) -- Top
+set_keymaps_all("<A-b>", "<C-w>b", true) -- Bottom
+set_keymaps_all("<A-h>", "<C-w>h", true) -- Left
+set_keymaps_all("<A-j>", "<C-w>j", true) -- Down
+set_keymaps_all("<A-k>", "<C-w>k", true) -- Up
+set_keymaps_all("<A-l>", "<C-w>l", true) -- Right
