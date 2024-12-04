@@ -1,14 +1,21 @@
--- Custom command for nvim-tree
+-- L command for nvim-tree
 vim.api.nvim_create_user_command(
   'L',
   "NvimTreeToggle",
   {bang = false}
 )
 
--- Custom command for prototypes
+-- P command for prototypes
 vim.api.nvim_create_user_command(
   'P',
   "! ~/my_scripts/my_prototypes.sh",
+  {bang = false}
+)
+
+-- M command for make
+vim.api.nvim_create_user_command(
+  'M',
+  "! make",
   {bang = false}
 )
 
