@@ -12,8 +12,6 @@ else
 	vim.cmd.colorscheme "tokyonight-night" -- day, night, storm, moon
 end
 
---vim.cmd.colorscheme "catppuccin-latte"
-
 -- Line Number Colors
 vim.opt.number = true
 vim.opt.relativenumber = true
