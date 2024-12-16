@@ -88,8 +88,9 @@ if [ -f ~/.local/bin/oh-my-posh ]; then
 	eval "$(oh-my-posh init zsh --config ~/.local/bin/stelbent-compact.minimal.omp.json)" 
 fi
 
-
 if echo $0 | grep zsh; then
 	setopt PROMPT_SUBST
-	PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$'
+	PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 fi
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
