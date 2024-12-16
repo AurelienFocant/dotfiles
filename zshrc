@@ -87,3 +87,9 @@ if [ -f ~/.local/bin/oh-my-posh ]; then
 	export PATH=$PATH:/home/aurel/.local/bin
 	eval "$(oh-my-posh init zsh --config ~/.local/bin/stelbent-compact.minimal.omp.json)" 
 fi
+
+
+if echo $0 | grep zsh; then
+	setopt PROMPT_SUBST
+	PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$'
+fi
