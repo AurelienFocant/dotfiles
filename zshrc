@@ -64,13 +64,13 @@ alias xsel="xsel --clipboard"
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
-if echo $0 | grep zsh; then
+if echo $0 | grep -qi zsh; then
 	HISTFILE=$HOME/.zsh_history
 	setopt append_history # append rather then overwrite
 	setopt inc_append_history # add history immediately after typing a command
 	setopt sharehistory
 
-elif echo $0 | grep bash; then
+elif echo $0 | grep -qi bash; then
 	HISTFILE=$HOME/.bash_history
 	# When the shell exits, append to the history file instead of overwriting it
    shopt -s histappend
@@ -88,11 +88,11 @@ if [ -f ~/.local/bin/oh-my-posh ]; then
 	eval "$(oh-my-posh init zsh --config ~/.local/bin/stelbent-compact.minimal.omp.json)" 
 fi
 
-if echo $0 | grep zsh; then
-	setopt PROMPT_SUBST
-	PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+if uname | grep -qi Linux; then
+	if echo $0 | grep zsh; then
+		setopt PROMPT_SUBST
+		PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+	fi
 fi
 
-if uname | grep -i linux; then
-	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
+[ "$(uname)" = "Linux" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
