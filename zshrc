@@ -91,7 +91,7 @@ fi
 if uname | grep -qi Linux; then
 	if echo $0 | grep zsh; then
 		setopt PROMPT_SUBST
-		PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+		PROMPT='%* %F{green}%n@%m%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 	fi
 fi
 
