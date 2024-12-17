@@ -93,4 +93,6 @@ if echo $0 | grep zsh; then
 	PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if uname | grep -i linux; then
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
