@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 dotfile_dir="$HOME/dotfiles"
 
