@@ -27,6 +27,8 @@ vim.opt.expandtab = false
 
 -- FOLDS
 vim.opt.foldmethod = "syntax"
+--vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevelstart = 0 
 vim.opt.foldnestmax = 1
 vim.opt.foldcolumn = "1"
