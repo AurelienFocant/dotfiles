@@ -1,23 +1,26 @@
 local HOME = os.getenv("HOME")
 local TERM = os.getenv("TERM_PROGRAM")
 
-vim.opt.termguicolors = true
--- Theme setup
-
-if (TERM == "WezTerm") then
-	-- ------ catppucin Theme
-	vim.cmd.colorscheme "catppuccin-latte" -- latte, frappe, macchiato, mocha
+if (TERM == "WezTerm") then					-- Theme setup
+	vim.cmd.colorscheme "catppuccin-latte"	-- catppucin Theme: latte, frappe, macchiato, mocha
 else
-	-- ------ tokyonight Theme
-	vim.cmd.colorscheme "tokyonight-night" -- day, night, storm, moon
+	vim.cmd.colorscheme "tokyonight-night"	-- tokyonight Theme: day, night, storm, moon
 end
+vim.opt.termguicolors = true
 
--- Line Number Colors
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#ff038f", bg = "NONE" })
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#ff038f", bg = "NONE" })	-- Line Number Colors
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff038f", bg = "NONE" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ff038f", bg = "NONE" })
+
+-- Rules for opening Windows
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.opt.inccommand = "split"	-- Incremental results in Search and Replace
+vim.opt.virtualedit = "block"	-- Visual Block can go anywhere
+vim.opt.scrolloff = 999			-- Try and keep the cursor in the middle of the page
 
 -- Tabs rules
 vim.opt.tabstop = 4
@@ -28,7 +31,7 @@ vim.opt.expandtab = false
 -- FOLDS
 vim.opt.foldmethod = "syntax"
 --vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+--vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevelstart = 0 
 vim.opt.foldnestmax = 1
 vim.opt.foldcolumn = "1"
