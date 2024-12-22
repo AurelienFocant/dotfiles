@@ -66,6 +66,10 @@ return packer.startup(function(use)
 		run = ':TSUpdate'
 	}
 
+	use {
+		"42Paris/42header"
+	}
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end

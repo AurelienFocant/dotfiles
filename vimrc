@@ -109,3 +109,5 @@ autocmd FileType help  setlocal relativenumber
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:user42 = 'afocant'
+let g:mail42 = 'afocant@student.s19.be'

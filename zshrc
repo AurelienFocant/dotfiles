@@ -54,10 +54,6 @@ fi
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
-USER=afocant
-MAIL=afocant@student.s19.be
-export USER MAIL
-#----------------------------------------------------------------------------------------#
 export BBR=born2beroot.duckdns.org
 alias bbr="ssh aurel@$BBR -X -p 4242"
 alias xsel="xsel --clipboard"
@@ -95,4 +91,8 @@ if uname | grep -qi Linux; then
 	fi
 fi
 
-[ "$(uname)" = "Linux" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# grep -q s19 <(uname -a) &&
+# if [[ "$(uname)" = "Linux" ]] && [[ ! $(uname -n) =~ "s19" ]] ; then
+if [ -d /home/linuxbrew ]; then
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi

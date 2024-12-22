@@ -50,3 +50,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
 	command = 'if expand("%") == "" | NvimTreeToggle'
 })
+
+vim.g.user42 = "afocant"
+vim.g.mail42 = "afocant@student.s19.be"
