@@ -51,7 +51,7 @@ return packer.startup(function(use)
 		},
 	}
 
-	use 'ludovicchabant/vim-gutentags'
+	use 'ludovicchabant/vim-gutentags' -- Tags
 
 	use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -62,13 +62,25 @@ return packer.startup(function(use)
 	}
 
 	use { 
-		'nvim-treesitter/nvim-treesitter',
+		'nvim-treesitter/nvim-treesitter', -- TreeSitter
 		run = ':TSUpdate'
 	}
 
 	use {
 		"42Paris/42header"
 	}
+
+	-- use {
+	-- 	"neovim/nvim-lspconfig"
+	-- }
+	--
+	-- use {
+	-- 	"williamboman/mason.nvim",
+	-- 	requires = {
+	-- 		"williamboman/mason-lspconfig.nvim"
+	-- 	}
+	-- }
+
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
