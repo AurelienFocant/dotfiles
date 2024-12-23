@@ -20,7 +20,6 @@ vim.opt.splitright = true
 
 vim.opt.inccommand = "split"	-- Incremental results in Search and Replace
 vim.opt.virtualedit = "block"	-- Visual Block can go anywhere
-vim.opt.scrolloff = 999			-- Try and keep the cursor in the middle of the page
 
 -- Tabs rules
 vim.opt.tabstop = 4
