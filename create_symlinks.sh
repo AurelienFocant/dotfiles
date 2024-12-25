@@ -13,4 +13,4 @@ done
 # create symlinks for neovim config
 mkdir -p $HOME/.config
 rm -rf "$HOME/.config/nvim" && ln -sfv "$dotfile_dir/nvim" "$HOME/.config"
-rm -rf "$HOME/.nvimrc" && ln -sfv "$dotfile_dir/nvim" "$HOME/.nvimrc"
+rm -rf "$HOME/.nvimrc" && ln -sfv "$dotfile_dir/nvim/lua" "$HOME/.nvimrc"
