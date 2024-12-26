@@ -15,12 +15,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local terminal = os.getenv("TERM_PROGRAM")
 
 require("lazy").setup({
 	{
 		"folke/tokyonight.nvim",
 		config = function()
-			vim.cmd.colorscheme("tokyonight-night")
+			if (terminal == "iTerm.app") then
+				vim.cmd.colorscheme("tokyonight-night")
+			end
 		end
 
 	},
@@ -29,7 +32,7 @@ require("lazy").setup({
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			if (os.getenv("TERM_PROGRAM") == "WezTerm") then
+			if (terminal == "WezTerm") then
 				vim.cmd.colorscheme("catppuccin-latte")
 			end
 		end
