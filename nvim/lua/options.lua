@@ -2,9 +2,15 @@ local HOME = os.getenv("HOME")
 local TERM = os.getenv("TERM_PROGRAM")
 
 if (TERM == "WezTerm") then
-	vim.cmd.colorscheme("catpuccin-latte")
+	local status, err = pcall(vim.cmd, "colorscheme catpuccin-latte")
+	if not status then
+		print(err)
+	end
 else
-	vim.cmd.colorscheme("tokyonight-night")
+	local status, err = pcall(vim.cmd, "colorscheme tokyonight-night")
+	if not status then
+		print(err)
+	end
 end
 
 vim.opt.termguicolors = true
