@@ -1,6 +1,12 @@
 local HOME = os.getenv("HOME")
 local TERM = os.getenv("TERM_PROGRAM")
 
+if (TERM == "WezTerm") then
+	vim.cmd.colorscheme("catpuccin-latte")
+else
+	vim.cmd.colorscheme("tokyonight-night")
+end
+
 vim.opt.termguicolors = true
 
 vim.opt.number = true
