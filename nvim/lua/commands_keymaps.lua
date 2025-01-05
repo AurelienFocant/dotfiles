@@ -15,7 +15,7 @@ vim.api.nvim_create_user_command(
 -- M command for make
 vim.api.nvim_create_user_command(
   'M',
-  "! make",
+  "make",
   {bang = false}
 )
 

@@ -70,6 +70,14 @@ return packer.startup(function(use)
 		"42Paris/42header"
 	}
 
+	use {
+		"OXY2DEV/markview.nvim",
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			'nvim-tree/nvim-web-devicons', -- optional
+		},
+	}
+
 	-- use {
 	-- 	"neovim/nvim-lspconfig"
 	-- }
