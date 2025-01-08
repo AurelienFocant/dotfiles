@@ -58,9 +58,14 @@ export BBR=born2beroot.duckdns.org
 alias bbr="ssh -p 4242 aurel@$BBR -X"
 alias xsel="xsel --clipboard"
 #----------------------------------------------------------------------------------------#
-# export always the same ssh-agent
-SSH_AUTH_SOCK=/var/folders/_1/c_kbgn7x6lx78dy05x5nswt80000gn/T//ssh-j5ppZ4NfoI8a/agent.6479
-SSH_AGENT_PID=6480k
+# export always the same ssh-agent per machine
+
+if [[ $(hostname) =~ "AurelMBA" ]]; then
+	export SSH_AUTH_SOCK=/var/folders/_1/c_kbgn7x6lx78dy05x5nswt80000gn/T//ssh-v923bNl1UqWu/agent.28238
+	export SSH_AGENT_PID=28239
+elif [[ $(hostname) =~ ".s19.b3" ]]; then
+	export plouf
+fi
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
