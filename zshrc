@@ -64,7 +64,9 @@ if [[ $(hostname) =~ "AurelMBA" ]]; then
 	export SSH_AUTH_SOCK=/var/folders/_1/c_kbgn7x6lx78dy05x5nswt80000gn/T//ssh-v923bNl1UqWu/agent.28238
 	export SSH_AGENT_PID=28239
 elif [[ $(hostname) =~ ".s19.b3" ]]; then
-	export plouf
+	export SSH_AUTH_SOCK=/tmp/ssh-XXXXXXWPfoL3/agent.12902
+	export SSH_AGENT_PID=12903
+
 fi
 #----------------------------------------------------------------------------------------#
 
