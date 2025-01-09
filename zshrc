@@ -59,14 +59,35 @@ alias bbr="ssh -p 4242 aurel@$BBR -X"
 alias xsel="xsel --clipboard"
 #----------------------------------------------------------------------------------------#
 
-# export always the same ssh-agent per machine
-if [[ $(hostname) =~ "AurelMBA" ]]; then
-	export SSH_AUTH_SOCK=/var/folders/_1/c_kbgn7x6lx78dy05x5nswt80000gn/T//ssh-v923bNl1UqWu/agent.28238
-	export SSH_AGENT_PID=28239
-elif [[ $(hostname) =~ ".s19.be" ]]; then
-	export SSH_AUTH_SOCK=/tmp/ssh-XXXXXXWPfoL3/agent.12902
-	export SSH_AGENT_PID=12903
-fi
+# # export always the same ssh-agent per machine
+
+# if [[ $(hostname) =~ "AurelMBA" ]]; then
+# 	export SSH_AUTH_SOCK=/var/folders/_1/c_kbgn7x6lx78dy05x5nswt80000gn/T//ssh-v923bNl1UqWu/agent.28238
+# 	export SSH_AGENT_PID=28239
+# elif [[ $(hostname) =~ ".s19.be" ]]; then
+# 	export SSH_AUTH_SOCK=/tmp/ssh-XXXXXXWPfoL3/agent.12902
+# 	export SSH_AGENT_PID=12903
+# fi
+#
+
+# if [ -z "$SSH_AGENT_PID" ]; then
+# 	eval $(ssh-agent)
+# 	cat >~/.ssh/ssh-agent.env <<EOF
+# export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+# export SSH_AGENT_PID=$SSH_AGENT_PID
+# EOF
+# fi
+#
+# if [ -z "$SSH_AGENT_PID" ] && [ -f ~/.ssh/ssh-agent.env ] ; then
+# 	source ~/.ssh/ssh-agent.env
+# fi
+#
+# ssh_keys=("github" "vogsphere" "debian_vm")
+# for key in ${ssh_keys[@]}; do
+# 	if ! ssh-add -T "${HOME}/.ssh/${key}.pub" &>/dev/null; then
+# 		ssh-add "${HOME}/.ssh/${key}"
+# 	fi
+# done
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
@@ -79,9 +100,9 @@ if echo $0 | grep -qi zsh; then
 elif echo $0 | grep -qi bash; then
 	HISTFILE=$HOME/.bash_history
 	# When the shell exits, append to the history file instead of overwriting it
-   shopt -s histappend
-   # After each command, append to the history file and reread it
-   export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+	shopt -s histappend
+	# After each command, append to the history file and reread it
+	export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 fi
 HISTSIZE=99999999
