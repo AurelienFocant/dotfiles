@@ -60,15 +60,15 @@ alias xsel="xsel --clipboard"
 #----------------------------------------------------------------------------------------#
 
 # # export always the same ssh-agent per machine
-
-# if [[ $(hostname) =~ "AurelMBA" ]]; then
+# if system_profiler SPHardwareDataType | grep --quiet FC3PYG54P7 ; then	# M2 Macbook Air
 # 	export SSH_AUTH_SOCK=/var/folders/_1/c_kbgn7x6lx78dy05x5nswt80000gn/T//ssh-v923bNl1UqWu/agent.28238
 # 	export SSH_AGENT_PID=28239
-# elif [[ $(hostname) =~ ".s19.be" ]]; then
+# elif [[ $(hostname) =~ ".s19.be" ]]; then						# s19 iMac network
 # 	export SSH_AUTH_SOCK=/tmp/ssh-XXXXXXWPfoL3/agent.12902
 # 	export SSH_AGENT_PID=12903
 # fi
-#
+
+# # export always the same ssh-agent per machine
 
 # if [ -z "$SSH_AGENT_PID" ]; then
 # 	eval $(ssh-agent)
@@ -122,8 +122,12 @@ if uname | grep -qi Linux; then
 	fi
 fi
 
-# grep -q s19 <(uname -a) &&
 # if [[ "$(uname)" = "Linux" ]] && [[ ! $(uname -n) =~ "s19" ]] ; then
+
+
 if [ -d /home/linuxbrew ]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+# -- add JAVA tt PATH
+export PATH="/opt/homebrew/opt/openjdk/bin:${PATH}"
