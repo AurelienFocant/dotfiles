@@ -101,6 +101,7 @@ if uname -a | grep --quiet -E "Linux"; then
 	agent_file="~/.ssh/ssh-agent.env"
 	if ! ps aux | grep -v grep | grep ssh-agent; then
 		eval $(ssh-agent)
+		echo HI
 		cat >${agent_file} <<EOF
 export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
 export SSH_AGENT_PID=$SSH_AGENT_PID
@@ -111,8 +112,13 @@ EOF
 fi
 
 # print exit message when exiting shell
-[[ $0 == bash ]] && trap "echo 'Exiting bash'" EXIT
-[[ $0 == zsh ]] && TRAPEXIT() { echo 'Exiting zsh' }
+if [[ $0 == zsh ]]; then
+	TRAPEXIT() { 
+		echo 'Exiting zsh'
+	}
+elif [[ $0 == bash ]];then
+	trap "echo 'Exiting bash'" EXIT
+fi
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
