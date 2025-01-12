@@ -118,6 +118,8 @@ fi
 
 # deprecated bash on macOS warning is annoying
 export BASH_SILENCE_DEPRECATION_WARNING=1
+# use homebrew bash
+alias bash="/opt/homebrew/bin/bash"
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
