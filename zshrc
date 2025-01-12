@@ -101,7 +101,7 @@ if uname -a | grep --quiet -E "Linux"; then
 	agent_file="~/.ssh/ssh-agent.env"
 	if ! ps aux | grep -v grep | grep --quiet ssh-agent; then
 		eval $(ssh-agent) &>/dev/null
-		echo HI
+		[ -f ${agent_file} ] || touch ${agent_file}
 		cat >${agent_file} <<EOF
 export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
 export SSH_AGENT_PID=$SSH_AGENT_PID
