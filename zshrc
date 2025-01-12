@@ -119,6 +119,9 @@ if [[ $0 == zsh ]]; then
 elif [[ $0 == bash ]];then
 	trap "echo 'Exiting bash'" EXIT
 fi
+
+# deprecated bash on macOS warning is annoying
+export BASH_SILENCE_DEPRECATION_WARNING=1
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
