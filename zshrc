@@ -88,6 +88,17 @@ alias xsel="xsel --clipboard"
 # 		ssh-add "${HOME}/.ssh/${key}"
 # 	fi
 # done
+#
+
+# on macOS M2 MBA, ssh-agent loads automatically when ssh-add is called
+# it should loads the ssh keys with their passphrases stored in Keychain Access
+
+ssh_keys=("github" "vogsphere" "debian_vm")
+if uname -a | grep --quiet -E "Darwin.*arm64"; then
+	for key in ${ssh_keys[@]}; do
+		ssh-add "${HOME}/.ssh/${key}" --apple-load-keychain 2>/dev/null
+	done
+fi
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
