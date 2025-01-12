@@ -99,8 +99,8 @@ fi
 # on Linux you have to start a ssh-agent
 if uname -a | grep --quiet -E "Linux"; then
 	agent_file="~/.ssh/ssh-agent.env"
-	if ! ps aux | grep -v grep | grep ssh-agent; then
-		eval $(ssh-agent)
+	if ! ps aux | grep -v grep | grep --quiet ssh-agent; then
+		eval $(ssh-agent) &>/dev/null
 		echo HI
 		cat >${agent_file} <<EOF
 export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
@@ -113,11 +113,7 @@ fi
 
 # print exit message when exiting shell
 if [[ $0 == zsh ]]; then
-	TRAPEXIT() { 
-		echo "Exiting zsh"
-	}
-elif [[ $0 == bash ]];then
-	trap "echo 'Exiting bash'" EXIT
+	trap "echo 'exit'" EXIT
 fi
 
 # deprecated bash on macOS warning is annoying
