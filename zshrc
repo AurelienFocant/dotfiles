@@ -113,13 +113,13 @@ fi
 
 # print exit message when exiting shell
 if [[ $0 == zsh ]]; then
-	trap "echo 'exit'" EXIT
+	trap "echo exit" EXIT
 fi
 
 # deprecated bash on macOS warning is annoying
 export BASH_SILENCE_DEPRECATION_WARNING=1
 # use homebrew bash
-alias bash="/opt/homebrew/bin/bash"
+[ -f /opt/homebrew/bin/bash ] && alias bash="/opt/homebrew/bin/bash"
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
