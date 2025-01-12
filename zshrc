@@ -70,13 +70,6 @@ alias xsel="xsel --clipboard"
 
 # # export always the same ssh-agent per machine
 
-# if [ -z "$SSH_AGENT_PID" ]; then
-# 	eval $(ssh-agent)
-# 	cat >~/.ssh/ssh-agent.env <<EOF
-# export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
-# export SSH_AGENT_PID=$SSH_AGENT_PID
-# EOF
-# fi
 #
 # if [ -z "$SSH_AGENT_PID" ] && [ -f ~/.ssh/ssh-agent.env ] ; then
 # 	source ~/.ssh/ssh-agent.env
@@ -89,16 +82,33 @@ alias xsel="xsel --clipboard"
 # 	fi
 # done
 #
-
-# on macOS M2 MBA, ssh-agent loads automatically when ssh-add is called
-# it should loads the ssh keys with their passphrases stored in Keychain Access
+# 	cat >~/.ssh/ssh-agent.env <<EOF
+# export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+# export SSH_AGENT_PID=$SSH_AGENT_PID
+# EOF
 
 ssh_keys=("github" "vogsphere" "debian_vm")
+# on macOS M2 MBA, ssh-agent loads automatically when ssh-add is called
+# it should loads the ssh keys with their passphrases stored in Keychain Access
 if uname -a | grep --quiet -E "Darwin.*arm64"; then
 	for key in ${ssh_keys[@]}; do
 		ssh-add "${HOME}/.ssh/${key}" --apple-load-keychain 2>/dev/null
 	done
 fi
+
+# on Linux you have to start a ssh-agent
+if uname -a | grep --quiet -E "Linux"; then
+	if ! ps aux | grep -v grep | grep ssh-agent; then
+		eval $(ssh-agent)
+	fi
+	export SSH_AUTH_SOCK
+	export SSH_AGENT_PID
+	zsh
+fi
+
+# print exit message when exiting shell
+[[ $0 == bash ]] && trap "echo 'Exiting bash'" EXIT
+[[ $0 == zsh ]] && TRAPEXIT() { echo 'Exiting zsh' }
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
