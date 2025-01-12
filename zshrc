@@ -98,12 +98,16 @@ fi
 
 # on Linux you have to start a ssh-agent
 if uname -a | grep --quiet -E "Linux"; then
+	agent_file="~/.ssh/ssh-agent.env"
 	if ! ps aux | grep -v grep | grep ssh-agent; then
 		eval $(ssh-agent)
+		cat >${agent_file} <<EOF
+export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+export SSH_AGENT_PID=$SSH_AGENT_PID
+EOF
+	else
+		[ -f ${agent_file} ] && source ${agent_file}
 	fi
-	export SSH_AUTH_SOCK
-	export SSH_AGENT_PID
-	zsh
 fi
 
 # print exit message when exiting shell
