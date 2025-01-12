@@ -114,7 +114,7 @@ fi
 # print exit message when exiting shell
 if [[ $0 == zsh ]]; then
 	TRAPEXIT() { 
-		echo 'Exiting zsh'
+		echo "Exiting zsh"
 	}
 elif [[ $0 == bash ]];then
 	trap "echo 'Exiting bash'" EXIT
