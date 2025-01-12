@@ -109,11 +109,14 @@ EOF
 	else
 		[ -f ${agent_file} ] && source ${agent_file}
 	fi
+	for key in ${ssh_keys[@]}; do
+		ssh-add "${HOME}/.ssh/${key}" 2>/dev/null
+	done
 fi
 
 # print exit message when exiting shell
 if [[ $0 == zsh ]]; then
-	trap "echo exit" EXIT
+	trap "echo exit shell lvl $SHLVL" EXIT
 fi
 
 # deprecated bash on macOS warning is annoying
