@@ -98,7 +98,7 @@ fi
 
 # on Linux you have to start a ssh-agent
 if uname -a | grep --quiet -E "Linux"; then
-	agent_file="~/.ssh/ssh-agent.env"
+	agent_file="${HOME}/.ssh/ssh-agent.env"
 	if ! ps aux | grep -v grep | grep --quiet ssh-agent; then
 		eval $(ssh-agent) &>/dev/null
 		[ -f ${agent_file} ] || touch ${agent_file}
