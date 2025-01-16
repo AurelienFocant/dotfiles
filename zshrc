@@ -138,3 +138,6 @@ fi
 
 # -- add JAVA tt PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:${PATH}"
+
+# source fzf
+[[ $0 =~ zsh ]] && [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
