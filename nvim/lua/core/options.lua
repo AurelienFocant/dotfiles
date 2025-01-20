@@ -1,6 +1,12 @@
 local HOME = os.getenv("HOME")
 local TERM = os.getenv("TERM_PROGRAM")
 
+local vim = vim
+
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 if (TERM == "WezTerm") then
 	local status, err = pcall(vim.cmd, "colorscheme catpuccin-latte")
 	if not status then
@@ -36,8 +42,8 @@ vim.opt.expandtab = false
 
 -- FOLDS
 vim.opt.foldmethod = "syntax"
---vim.wo.foldmethod = "expr"
---vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.wo.foldmethod = "expr"
+-- vim.wo.foldexpr = 'v:lua.vim.lsp.foldexpr()'
 vim.opt.foldlevelstart = 0 
 vim.opt.foldnestmax = 1
 vim.opt.foldcolumn = "1"

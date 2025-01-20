@@ -1,7 +1,4 @@
-require("options")
-require("commands_keymaps")
+require("lazy/lazy")
 
-require("packer_manager")
-require("all_plugins/nvimtree")
-require("all_plugins/gutentags")
-require("all_plugins/treesitter")
+require("core/options")
+require("core/commands_keymaps")
