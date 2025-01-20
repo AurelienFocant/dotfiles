@@ -64,10 +64,12 @@ ssh_keys=("github" "vogsphere" "debian_vm")
 
 # on macOS M2 MBA, ssh-agent loads automatically when ssh-add is called
 # it should loads the ssh keys with their passphrases stored in Keychain Access
+# but only if they keys have been added once with
+# ssh-add --apple-use-keychain <key>
 if uname -a | grep --quiet -E "Darwin.*arm64"; then
 	for k in ${ssh_keys[@]}; do
 		key="${HOME}/.ssh/${k}"
-		ssh-add -T ${key} &>/dev/null || ssh-add ${key} 2>/dev/null --apple-load-keychain
+		ssh-add -T ${key} &>/dev/null || ssh-add ${key} --apple-load-keychain
 	done
 fi
 
