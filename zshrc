@@ -136,6 +136,12 @@ if [ -d /home/linuxbrew ]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# HomeBrew for Ubuntu computers at 19,
+# with brew manually installed in ~ directory
+if [ -f ${HOME}/homebrew/bin/brew ]; then
+	eval "$(${HOME}/homebrew/bin/brew shellenv)"
+fi
+
 # -- add JAVA tt PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:${PATH}"
 
