@@ -41,6 +41,7 @@ vim.api.nvim_create_user_command(
 -- TERMINAL Commands
 -- Remap to escape terminal mode
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-N>", { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-w>", "<C-\\><C-N><C-w>", { noremap = true })
 
 -- T command for vertical terminal
 vim.api.nvim_create_user_command(
