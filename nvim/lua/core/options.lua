@@ -28,7 +28,7 @@ vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff038f", bg = "NONE" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ff038f", bg = "NONE" })
 
 -- Rules for opening Windows
-vim.opt.splitbelow = true
+vim.opt.splitbelow = false
 vim.opt.splitright = true
 
 vim.opt.inccommand = "split"	-- Incremental results in Search and Replace
@@ -44,11 +44,11 @@ vim.opt.expandtab = false
 vim.opt.foldmethod = "syntax"
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = 'v:lua.vim.lsp.foldexpr()'
-vim.opt.foldlevelstart = 0 
+vim.opt.foldlevelstart = 0
 vim.opt.foldnestmax = 1
 vim.opt.foldcolumn = "1"
 vim.api.nvim_set_hl(0, "Folded", {  bg = "NONE" })
-vim.api.nvim_set_keymap("n", "<leader><space>", "za", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>", "za", { noremap = true })
 
 -- Add path and tags
 vim.opt.tags:append("misc/tags")
