@@ -2,7 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			vim.diagnostic.enable(false)
+			vim.diagnostic.enable(true)
 			vim.opt.signcolumn = "yes"
 		end,
 	}
