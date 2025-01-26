@@ -21,7 +21,7 @@ return {
 
 				['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
 
-				['<C-e>'] = { 'hide' },
+				['<C-e>'] = { 'cancel' },
 				['<C-y>'] = { 'select_and_accept' },
 
 				['<C-p>'] = { 'select_prev', 'fallback' },
