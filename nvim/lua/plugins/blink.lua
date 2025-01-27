@@ -21,8 +21,9 @@ return {
 
 				['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
 
-				['<C-e>'] = { 'cancel' },
-				['<C-y>'] = { 'select_and_accept' },
+				-- fallback is used to keep original behavior in other completion modes
+				['<C-e>'] = { 'cancel', 'fallback' },
+				['<C-y>'] = { 'select_and_accept', 'fallback' },
 
 				['<C-p>'] = { 'select_prev', 'fallback' },
 				['<C-n>'] = { 'select_next', 'fallback' },
