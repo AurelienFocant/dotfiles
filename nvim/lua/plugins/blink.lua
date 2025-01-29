@@ -45,6 +45,12 @@ return {
 				nerd_font_variant = 'mono'
 			},
 			completion = {
+				list = {
+					selection = {
+						preselect = false,
+						auto_insert = true,
+					},
+				},
 				menu = {
 					auto_show = false,
 				},
