@@ -45,10 +45,16 @@ vim.opt.foldmethod = "syntax"
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = 'v:lua.vim.lsp.foldexpr()'
 vim.opt.foldlevelstart = 0
-vim.opt.foldnestmax = 1
 vim.opt.foldcolumn = "1"
 vim.api.nvim_set_hl(0, "Folded", {  bg = "NONE" })
 vim.api.nvim_set_keymap("n", "<space>", "za", { noremap = true })
+vim.opt.foldnestmax = 1
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "java", "cpp" },
+  callback = function()
+    vim.opt.foldnestmax = 2
+  end,
+})
 
 -- Add path and tags
 vim.opt.tags:append("misc/tags")
