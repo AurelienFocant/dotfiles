@@ -27,6 +27,8 @@ vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#ff038f", bg = "NONE" })	-- Line N
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff038f", bg = "NONE" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ff038f", bg = "NONE" })
 
+vim.opt.wrap = false
+
 -- Rules for opening Windows
 vim.opt.splitbelow = false
 vim.opt.splitright = true
