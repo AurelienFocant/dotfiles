@@ -1,3 +1,15 @@
+" **************************************************************************** "
+"                                                                              "
+"    stdheader.vim                                        :::      ::::::::    "
+"                                                       :+:      :+:    :+:    "
+"    By:  afocant  <afocant@student.s19.be>           +:+ +:+         +:+      "
+"    And: slangero <slangero@student.s19.be>        +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2025/02/03 12:46:14 by afocant           #+#    #+#              "
+"    Updated: 2025/02/03 12:50:31 by afocant          ###   ########.fr        "
+"                                                                              "
+" **************************************************************************** "
+
 let s:asciiart = [
 			\"        :::      ::::::::",
 			\"      :+:      :+:    :+:",
@@ -71,10 +83,10 @@ function! s:line(n)
 		return s:textline(s:filename(), s:ascii(a:n))
 	elseif a:n == 4 || a:n == 7 " empty with ascii
 		return s:textline('', s:ascii(a:n))
-	elseif a:n == 5 " author
-		return s:textline("By:  " . s:user() . "  <" . s:mail() . ">", s:ascii(a:n))
-	elseif a:n == 6 " co-author
-		return s:textline("And: " . "slangero" . " <" . "slangero@student.s19.be" . ">", s:ascii(a:n))
+	elseif a:n == 5 " co-author
+		return s:textline("By: " . "slangero" . " <" . "slangero@student.s19.be" . ">", s:ascii(a:n))
+	elseif a:n == 6 " author
+		return s:textline("By: " . s:user() . "  <" . s:mail() . ">", s:ascii(a:n))
 	elseif a:n == 8 " created
 		return s:textline("Created: " . s:date() . " by " . s:user(), s:ascii(a:n))
 	elseif a:n == 9 " updated
