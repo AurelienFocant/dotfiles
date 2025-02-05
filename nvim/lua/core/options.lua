@@ -50,11 +50,11 @@ vim.opt.foldlevelstart = 0
 vim.opt.foldcolumn = "1"
 vim.api.nvim_set_hl(0, "Folded", {  bg = "NONE" })
 vim.api.nvim_set_keymap("n", "<space>", "za", { noremap = true })
-vim.opt.foldnestmax = 1
+vim.wo.foldnestmax = 1
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "java", "cpp" },
+  pattern = { "java" },
   callback = function()
-    vim.opt.foldnestmax = 2
+    vim.wo.foldnestmax = 2
   end,
 })
 
