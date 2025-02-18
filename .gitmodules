@@ -1,3 +1,3 @@
 [submodule "ssh"]
-	path = ssh/ssh
+	path = ssh
 	url = git@github.com:AurelienFocant/ssh_config.git

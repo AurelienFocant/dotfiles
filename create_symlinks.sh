@@ -2,18 +2,20 @@
 
 dotfile_dir="$HOME/dotfiles"
 
-cd $dotfile_dir || exit
-
 files="\
 rcs_shells	 zshrc
 rcs_shells	bashrc
 git			gitconfig
 vims		vimrc
-ssh			ssh/config"
+"
 
 printf "$files" | while read -r subdir file; do
-	ln -sfv "$dotfile_dir/$subdir/$file" "$HOME/.$file"
+	rm -rf "$HOME/.$file" && ln -sfv "$dotfile_dir/$subdir/$file" "$HOME/.$file"
 done
+
+# create symlink for ssh config
+mkdir -p $HOME/.ssh
+rm -rf $HOME/.ssh/config && ln -sfv "$dotfile_dir/ssh/config" "$HOME/.ssh"
 
 # create symlinks for neovim config
 mkdir -p $HOME/.config
