@@ -149,3 +149,13 @@ export PATH="/opt/homebrew/opt/openjdk/bin:${PATH}"
 
 # source fzf
 [[ $0 =~ zsh ]] && [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+#-----------------------#
+# GIT autocompletion
+[[ $0 =~ zsh ]] && autoload -Uz compinit && compinit
+
+if [[ $0 =~ bash ]]; then
+	git_compl="$HOME/dotfiles/git-completion/git-completion.bash"
+	[ -f $git_compl ] && source $git_compl
+fi
