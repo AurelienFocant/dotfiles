@@ -62,9 +62,12 @@ alias xsel="xsel --clipboard"
 # ssh-agent should start and add keys every time a shell is launched
 ssh_keys=("github" "vogsphere" "debian_vm")
 
+# ----- macOS ----- #
 # on macOS M2 MBA, ssh-agent loads automatically when ssh-add is called
 # it should loads the ssh keys with their passphrases stored in Keychain Access
 # but only if they keys have been added once with
+
+# DONT FORGET TO ADD KEYS TO KEYCHAIN THE FIRST TIME
 # ssh-add --apple-use-keychain <key>
 if uname -a | grep --quiet -E "Darwin.*arm64"; then
 	for k in ${ssh_keys[@]}; do
@@ -73,6 +76,7 @@ if uname -a | grep --quiet -E "Darwin.*arm64"; then
 	done
 fi
 
+# ----- Linux ----- #
 # on Linux you have to start a ssh-agent
 if uname -a | grep --quiet -E "Linux"; then
 	agent_file="${HOME}/.ssh/ssh-agent.env"
