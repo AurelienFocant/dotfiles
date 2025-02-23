@@ -17,3 +17,7 @@ vim.keymap.set("n", "<leader>dw", function()
 		vim.diagnostic.config({ virtual_text = true, underline = true })
 	end
 end)
+
+vim.keymap.set("n", "<leader>gr", function ()
+	vim.lsp.buf.references()
+end)
