@@ -76,3 +76,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 vim.g.user42 = "afocant"
 vim.g.mail42 = "afocant@student.s19.be"
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	command = "set wrap"
+})
