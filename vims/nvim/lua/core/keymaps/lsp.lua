@@ -20,4 +20,6 @@ end)
 
 vim.keymap.set("n", "<leader>gr", function ()
 	vim.lsp.buf.references()
+	vim.cmd("cclose")
+	vim.cmd("cope | wincmd L")
 end)
