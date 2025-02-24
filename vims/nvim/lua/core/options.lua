@@ -29,6 +29,8 @@ vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ff038f", bg = "NONE" })
 
 vim.opt.wrap = false
 
+vim.opt.clipboard="unnamedplus"
+
 -- Rules for opening Windows
 vim.opt.splitbelow = false
 vim.opt.splitright = true
