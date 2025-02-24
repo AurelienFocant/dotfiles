@@ -70,11 +70,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 --})
 ---------------------------------------------------
 
--- Set keymaps for Quickfix List
-vim.api.nvim_set_keymap("n", "[w", ":cw | wincmd L <CR>", { noremap = noremap })
-vim.api.nvim_set_keymap("n", "[n", ":cnext <CR>", { noremap = noremap })
-vim.api.nvim_set_keymap("n", "[o", ":cnext <CR>", { noremap = noremap })
-vim.api.nvim_set_keymap("n", "[p", ":cprev <CR>", { noremap = noremap })
 
 
 -- Set keymaps for Windows Navigation
