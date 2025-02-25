@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>dw", function()
 	end
 end)
 
-vim.keymap.set("n", "<leader>gr", function ()
+vim.keymap.set("n", "[r", function ()
 	vim.lsp.buf.references()
 	vim.cmd("cclose")
 	vim.cmd("cope | wincmd L")
