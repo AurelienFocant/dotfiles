@@ -124,3 +124,7 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
         end
     end
 })
+
+
+-- majT will open window in new tab
+vim.api.nvim_set_keymap("n", "T", "<C-w>v<C-w>T", { noremap = true })
