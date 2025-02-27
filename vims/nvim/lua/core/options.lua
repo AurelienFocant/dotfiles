@@ -31,6 +31,14 @@ vim.opt.wrap = false
 
 vim.opt.clipboard="unnamedplus"
 
+-- Disable new lines under comment being commented as well
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ 'r', 'o' })
+  end,
+})
+
 -- Rules for opening Windows
 vim.opt.splitbelow = false
 vim.opt.splitright = true
