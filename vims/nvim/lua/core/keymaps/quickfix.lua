@@ -10,10 +10,19 @@ vim.api.nvim_set_keymap("n", "[p", ":cprev <CR>", { noremap = noremap })
 
 -- Toggle QFL
 local function is_qf_window_open()
-    return vim.iter(vim.api.nvim_list_wins()):any(function(winid)
-        return vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(winid), "buftype") == "quickfix"
-    end)
+	for _, winid in ipairs(vim.api.nvim_list_wins()) do
+		if vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(winid), "buftype") == "quickfix" then
+			return true
+		end
+	end
+	return false
 end
+-- Supposed to do the same but not working on 19 computers
+-- local function is_qf_window_open()
+--     return vim.iter(vim.api.nvim_list_wins()):any(function(winid)
+--         return vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(winid), "buftype") == "quickfix"
+--     end)
+-- end
 
 vim.keymap.set("n", "[w", function()
     vim.cmd(is_qf_window_open() and "cclose" or "copen | wincmd L")
