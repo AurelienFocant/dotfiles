@@ -23,3 +23,7 @@ vim.keymap.set("n", "[r", function ()
 	vim.cmd("cclose")
 	vim.cmd("cope | wincmd L")
 end)
+
+vim.keymap.set("n", "[R", function ()
+	vim.lsp.buf.rename()
+end)
