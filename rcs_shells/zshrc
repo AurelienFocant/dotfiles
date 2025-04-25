@@ -17,6 +17,7 @@ else
 	alias lst="/bin/ls -lhG -T"
 	alias lat="/bin/ls -lhaG -T"
 fi
+export LC_COLLATE=C	# ensures ls sort uppercase first
 
 #----------------------------------------------------------------------------------------#
 alias src="source ~/.zshrc"
