@@ -29,6 +29,8 @@ vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ff038f", bg = "NONE" })
 
 vim.opt.wrap = false
 
+vim.opt.undofile = true
+
 -- Disable new lines under comment being commented as well
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
