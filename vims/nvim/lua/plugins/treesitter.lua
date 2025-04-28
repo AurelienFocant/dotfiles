@@ -8,7 +8,7 @@ return {
 				ensure_installed = {
 					"c", "python", "java" , "lua",
 					"vim", "vimdoc", "query",
-					"markdown", "markdown_inline", "latex",
+					"markdown", "markdown_inline",
 					"html", "css", "javascript",
 					"rust", "go", "zig",
 				},
