@@ -5,6 +5,12 @@ vim.api.nvim_create_user_command(
   {bang = false}
 )
 
+vim.api.nvim_create_user_command(
+  'K',
+  "NvimTreeResize 25",
+  {bang = false}
+)
+
 -- P command for prototypes
 vim.api.nvim_create_user_command(
   'P',
@@ -129,6 +135,8 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 -- majT will open window in new tab
 vim.api.nvim_set_keymap("n", "T", "<C-w>v<C-w>T", { noremap = true })
 
+
+-- Creating classes templates for .hpp files
 vim.api.nvim_create_autocmd("BufNewFile", {
   pattern = { "*.hpp" },
   callback = function()
@@ -142,7 +150,14 @@ vim.api.nvim_create_autocmd("BufNewFile", {
       "",
 	  "class " .. classname,
 	  "{",
-	  "}",
+	  "",
+	  "public:",
+	  "",
+	  "",
+	  "private:",
+	  "",
+	  "",
+	  "};",
       "",
       "#endif // " .. guard
     }
