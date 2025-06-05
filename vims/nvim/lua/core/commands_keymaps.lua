@@ -5,6 +5,12 @@ vim.api.nvim_create_user_command(
   {bang = false}
 )
 
+vim.api.nvim_create_user_command(
+  'K',
+  "NvimTreeResize 25",
+  {bang = false}
+)
+
 -- P command for prototypes
 vim.api.nvim_create_user_command(
   'P',
