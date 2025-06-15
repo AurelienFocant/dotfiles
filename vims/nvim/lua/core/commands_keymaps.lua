@@ -135,24 +135,59 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 -- majT will open window in new tab
 vim.api.nvim_set_keymap("n", "T", "<C-w>v<C-w>T", { noremap = true })
 
+
+-- Creating classes templates for .hpp files
 vim.api.nvim_create_autocmd("BufNewFile", {
-  pattern = { "*.hpp" },
-  callback = function()
-    local filename = vim.fn.expand("%:t"):upper():gsub("[^A-Z0-9]", "_")
-	local classname = vim.fn.expand('%:t'):gsub(".hpp", "")
-    local guard = "__" .. filename .. "__"
+	pattern = { "*.hpp" },
+	callback = function()
+		local filename = vim.fn.expand("%:t"):upper():gsub("[^A-Z0-9]", "_")
+		local classname = vim.fn.expand('%:t'):gsub(".hpp", "")
+		local guard = "__" .. filename .. "__"
 
-    local lines = {
-      "#ifndef " .. guard,
-      "#define " .. guard,
-      "",
-	  "class " .. classname,
-	  "{",
-	  "}",
-      "",
-      "#endif // " .. guard
-    }
+		local lines = {
+			"#ifndef " .. guard,
+			"#define " .. guard,
+			"",
+			"class " .. classname,
+			"{",
+			"",
+			"\tpublic:",
+			"",
+			"",
+			"\tprivate:",
+			"",
+			"",
+			"};",
+			"",
+			"#endif // " .. guard
+		}
 
-    vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
-  end
+		vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+	end
+})
+
+vim.api.nvim_create_autocmd("BufNewFile", {
+	pattern = { "*.cpp" },
+	callback = function()
+		local filename = vim.fn.expand("%:t"):upper():gsub("[^A-Z0-9]", "_")
+		local classname = vim.fn.expand('%:t'):gsub(".cpp", "")
+
+		local lines = {
+			"#include \"" .. classname .. ".hpp\"",
+			"",
+			"#include <iostream>",
+			"",
+			classname .. "::" .. classname .. "(void)",
+			"{",
+			"\tstd::cout << \"" .. classname .. " Object Constructed\" << std::endl;",
+			"}",
+			"",
+			classname .. "::~" .. classname .. "(void)",
+			"{",
+			"\tstd::cout << \"" .. classname .. " Object Destroyed\" << std::endl;",
+			"}",
+		}
+
+		vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+	end
 })
