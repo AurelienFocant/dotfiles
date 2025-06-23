@@ -152,6 +152,8 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 			"{",
 			"",
 			"\tpublic:",
+			"\t\t" .. classname .. "();",
+			"\t\t~" .. classname .. "();",
 			"",
 			"",
 			"\tprivate:",
