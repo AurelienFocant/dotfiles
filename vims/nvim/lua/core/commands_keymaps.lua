@@ -191,3 +191,8 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 		vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
 	end
 })
+
+vim.keymap.set('n', '<C-w>=', function()
+  vim.cmd('wincmd =')
+  vim.cmd("NvimTreeResize 25")
+end, { noremap = true, silent = true })
