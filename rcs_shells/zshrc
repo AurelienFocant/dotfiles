@@ -67,11 +67,12 @@ fi
 #----------------------------------------------------------------------------------------#
 export BBR=born2beroot.duckdns.org
 alias bbr="ssh -p 4242 aurel@$BBR -X"
+alias bbv="ssh -p 4343 aurel@$BBR -X"
 alias xsel="xsel --clipboard"
 #----------------------------------------------------------------------------------------#
 
 # ssh-agent should start and add keys every time a shell is launched
-ssh_keys=("github" "vogsphere" "debian_vm")
+ssh_keys=("github" "vogsphere" "debian_vm" "debianVPN")
 
 # ----- macOS ----- #
 # on macOS M2 MBA, ssh-agent loads automatically when ssh-add is called
