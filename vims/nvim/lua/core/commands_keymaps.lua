@@ -173,6 +173,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 	callback = function()
 		local filename = vim.fn.expand("%:t"):upper():gsub("[^A-Z0-9]", "_")
 		local classname = vim.fn.expand('%:t'):gsub(".cpp", "")
+		if (classname == "main") then return end
 
 		local lines = {
 			"#include \"" .. classname .. ".hpp\"",
