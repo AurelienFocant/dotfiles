@@ -6,7 +6,7 @@
 "    And: slangero <slangero@student.s19.be>        +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2025/02/03 12:46:14 by afocant           #+#    #+#              "
-"    Updated: 2025/07/16 23:23:05 by afocant          ###   ########.fr        "
+"    Updated: 2025/07/16 23:27:38 by afocant          ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -84,9 +84,9 @@ function! s:line(n)
 	elseif a:n == 4 || a:n == 7 " empty with ascii
 		return s:textline('', s:ascii(a:n))
 	elseif a:n == 5 " co-author
-		return s:textline("By: " . "alama" . " <" . "alama@student.s19.be" . ">", s:ascii(a:n))
+		return s:textline("By: " . "alama" . "   <" . "alama@student.s19.be" . ">", s:ascii(a:n))
 	elseif a:n == 6 " author
-		return s:textline("By: " . s:user() . "  <" . s:mail() . ">", s:ascii(a:n))
+		return s:textline("By: " . s:user() . " <" . s:mail() . ">", s:ascii(a:n))
 	elseif a:n == 8 " created
 		return s:textline("Created: " . s:date() . " by " . s:user(), s:ascii(a:n))
 	elseif a:n == 9 " updated

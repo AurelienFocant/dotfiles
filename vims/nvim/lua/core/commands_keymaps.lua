@@ -194,7 +194,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 			"",
 			classname .. "&\t" .. classname .. "::" .. "operator=( const " .. classname .. "& rhs )",
 			"{",
-			"\tstd::cout << \"" .. classname .. " Object Constructed by Assignment\" << std::endl;",
+			"\tstd::cout << \"" .. classname .. " Object Copied by Assignment\" << std::endl;",
 			"}",
 			"",
 			classname .. "::~" .. classname .. "( void )",
