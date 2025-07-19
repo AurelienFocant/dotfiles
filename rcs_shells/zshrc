@@ -65,7 +65,8 @@ fi
 #----------------------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------------------#
-export BBR=born2beroot.duckdns.org
+# export BBR=born2beroot.duckdns.org
+export BBR=born2beroot.ddns.net
 alias bbr="ssh -p 4242 aurel@$BBR -X"
 alias bbv="ssh -p 4343 aurel@$BBR -X"
 alias xsel="xsel --clipboard"
