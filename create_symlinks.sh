@@ -7,6 +7,7 @@ rcs_shells	 zshrc
 rcs_shells	bashrc
 git			gitconfig
 vims		vimrc
+gdb			gdbinit
 "
 
 printf "$files" | while read -r subdir file; do
