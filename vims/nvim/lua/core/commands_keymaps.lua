@@ -25,6 +25,13 @@ vim.api.nvim_create_user_command(
   {bang = false}
 )
 
+-- W command for write typo
+vim.api.nvim_create_user_command(
+  'W',
+  "w",
+  {bang = false}
+)
+
 
 ---------------------------------------
 -- Q command for quit and Session
