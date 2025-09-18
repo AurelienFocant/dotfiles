@@ -176,3 +176,10 @@ if [[ $0 =~ bash ]]; then
 	git_compl="$HOME/dotfiles/git/git-completion/git-completion.bash"
 	[ -f $git_compl ] && source $git_compl
 fi
+
+#-----------------------#
+# DOCKER autocompletion
+
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
