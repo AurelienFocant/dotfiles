@@ -1,0 +1,6 @@
+set print pretty
+set print object
+set print symbol-filename on
+set print array
+set print union
+set print vtbl

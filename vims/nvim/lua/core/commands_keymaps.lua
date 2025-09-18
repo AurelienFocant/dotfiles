@@ -149,7 +149,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 	callback = function()
 		local filename = vim.fn.expand("%:t"):upper():gsub("[^A-Z0-9]", "_")
 		local classname = vim.fn.expand('%:t'):gsub(".hpp", "")
-		local guard = "__" .. filename .. "__"
+		local guard = filename
 
 		local lines = {
 			"#ifndef " .. guard,
@@ -202,6 +202,10 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 			classname .. "&\t" .. classname .. "::" .. "operator=( const " .. classname .. "& rhs )",
 			"{",
 			"\tstd::cout << \"" .. classname .. " Object Copied by Assignment\" << std::endl;",
+			"",
+			"\tif (this != &rhs) {",
+			"\t}",
+			"return (*this);",
 			"}",
 			"",
 			classname .. "::~" .. classname .. "( void )",
