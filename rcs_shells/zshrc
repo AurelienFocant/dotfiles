@@ -170,16 +170,17 @@ export PATH="/opt/homebrew/opt/openjdk/bin:${PATH}"
 
 #-----------------------#
 # GIT autocompletion
-[[ $0 =~ zsh ]] && autoload -Uz compinit && compinit -u
+# DOCKER completion
+[[ $0 =~ zsh ]] && \
+FPATH="$HOME/.docker/completions:$FPATH" && \
+autoload -Uz compinit && compinit -u
 
 if [[ $0 =~ bash ]]; then
+	# GIT
 	git_compl="$HOME/dotfiles/git/git-completion/git-completion.bash"
 	[ -f $git_compl ] && source $git_compl
+	# DOCKER
+	if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+	fi
 fi
-
-#-----------------------#
-# DOCKER autocompletion
-
-FPATH="$HOME/.docker/completions:$FPATH"
-autoload -Uz compinit
-compinit
