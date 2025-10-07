@@ -222,3 +222,8 @@ vim.keymap.set('n', '<C-w>=', function()
   vim.cmd('wincmd =')
   vim.cmd("NvimTreeResize 25")
 end, { noremap = true, silent = true })
+
+vim.keymap.set('n', 'th', 'gT', { noremap = true })
+vim.keymap.set('n', 'tl', 'gt', { noremap = true })
+vim.keymap.set('n', 't[', 'gT', { noremap = true })
+vim.keymap.set('n', 't]', 'gt', { noremap = true })
