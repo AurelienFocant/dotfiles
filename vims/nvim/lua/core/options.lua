@@ -29,7 +29,7 @@ vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ff038f", bg = "NONE" })
 
 vim.opt.wrap = false
 
-vim.opt.undofile = true
+vim.opt.undofile = false
 
 -- Disable new lines under comment being commented as well
 vim.api.nvim_create_autocmd("FileType", {
@@ -61,10 +61,32 @@ vim.opt.foldcolumn = "1"
 vim.api.nvim_set_hl(0, "Folded", {  bg = "NONE" })
 vim.api.nvim_set_keymap("n", "<space>", "za", { noremap = true })
 vim.wo.foldnestmax = 1
+
+
+-- Define user command once globally (outside autocmd)
+vim.api.nvim_create_user_command("CloseLevel1Folds", function()
+  for l = 1, vim.fn.line('$') do
+    if vim.fn.foldlevel(l) == 1 and vim.fn.foldclosed(l) == -1 then
+      vim.cmd(l .. "foldclose")
+    end
+  end
+end, {})
+
+-- Create autocmd with augroup to avoid duplicates
+vim.api.nvim_create_augroup("MyFoldSettings", { clear = true })
+
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "java" },
+  pattern = { "java", "cpp" },
+  group = "MyFoldSettings",
   callback = function()
     vim.wo.foldnestmax = 2
+    vim.wo.foldlevel = 1         -- window-local foldlevel
+    vim.opt.foldlevelstart = 1   -- global foldlevelstart
+
+    vim.schedule(function()
+      vim.cmd("normal! zR")        -- close all folds
+      vim.cmd("CloseLevel1Folds")   -- open level 1 folds
+    end)
   end,
 })
 
@@ -86,4 +108,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 vim.g.user42 = "afocant"
 vim.g.mail42 = "afocant@student.s19.be"
-
