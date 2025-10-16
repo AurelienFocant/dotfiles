@@ -21,22 +21,24 @@ end
 
 vim.opt.termguicolors = true
 
+-- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#ff038f", bg = "NONE" })	-- Line Number Colors
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff038f", bg = "NONE" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ff038f", bg = "NONE" })
 
+-- Can lines wrap ?
 vim.opt.wrap = false
-
-vim.opt.undofile = true
+-- Can undo with U live past file closing ?
+vim.opt.undofile = false
 
 -- Disable new lines under comment being commented as well
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-  callback = function()
-    vim.opt_local.formatoptions:remove({ 'r', 'o' })
-  end,
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove({ 'r', 'o' })
+	end,
 })
 
 -- Rules for opening Windows
@@ -61,11 +63,39 @@ vim.opt.foldcolumn = "1"
 vim.api.nvim_set_hl(0, "Folded", {  bg = "NONE" })
 vim.api.nvim_set_keymap("n", "<space>", "za", { noremap = true })
 vim.wo.foldnestmax = 1
+
+function closeOnlyLevel1Folds()
+	vim.cmd("normal! gg")		-- go to top of file
+	vim.cmd("normal! zR")      	-- open all folds
+	while vim.fn.line('.') < vim.fn.line('$') do	-- while current line is not last line
+		vim.cmd("normal! ]]")	-- go to next section
+		vim.cmd("foldclose")	-- close that fold
+	end							-- repeat
+	vim.cmd("normal! gg")		-- go to top of file
+end
+
+-- Create autocmd with augroup to avoid duplicates
+vim.api.nvim_create_augroup("MyFoldSettings", { clear = true })
+
+-- Folding for OOP languages to be able to close Classes that are inside Classes
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "java" },
-  callback = function()
-    vim.wo.foldnestmax = 2
-  end,
+	pattern = { "java", "cpp" },
+	group = "MyFoldSettings",
+	callback = function()
+		vim.wo.foldnestmax = 2
+		vim.wo.foldlevel = 1         -- window-local foldlevel
+		vim.opt.foldlevelstart = 1   -- global foldlevelstart
+
+		vim.schedule(function()
+			closeOnlyLevel1Folds()
+		end)
+
+		vim.keymap.set('n', 'zM', function()
+			vim.cmd("normal! mf")
+			closeOnlyLevel1Folds()
+			vim.cmd("normal! 'f")
+		end, { noremap = true, silent = true })
+end,
 })
 
 -- Add path and tags
@@ -86,4 +116,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 vim.g.user42 = "afocant"
 vim.g.mail42 = "afocant@student.s19.be"
-

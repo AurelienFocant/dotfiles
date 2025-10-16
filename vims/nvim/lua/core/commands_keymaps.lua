@@ -157,16 +157,14 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 			"",
 			"class " .. classname,
 			"{",
+			"\tprivate:",
+			"",
 			"",
 			"\tpublic:",
 			"\t\t" .. classname .. "\t( void );",
 			"\t\t" .. classname .. "\t( const " .. classname .. "& src );",
-			"\t\t" .. classname .. "&\t" .. "operator=\t( const " .. classname .. "& rhs );",
+			"\t\t" .. classname .. "&\t" .. "operator= ( const " .. classname .. "& rhs );",
 			"\t\t~" .. classname .. "\t( void );",
-			"",
-			"",
-			"\tprivate:",
-			"",
 			"",
 			"};",
 			"",
@@ -191,21 +189,20 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 			"",
 			classname .. "::" .. classname .. "( void )",
 			"{",
-			"\tstd::cout << \"" .. classname .. " Object Constructed\" << std::endl;",
+			-- "\tstd::cout << \"" .. classname .. " Object Constructed\" << std::endl;",
 			"}",
 			"",
 			classname .. "::" .. classname .. "( const " .. classname .. "& src )",
 			"{",
-			"\tstd::cout << \"" .. classname .. " Object Constructed by Copy\" << std::endl;",
+			-- "\tstd::cout << \"" .. classname .. " Object Constructed by Copy\" << std::endl;",
 			"}",
 			"",
 			classname .. "&\t" .. classname .. "::" .. "operator=( const " .. classname .. "& rhs )",
 			"{",
-			"\tstd::cout << \"" .. classname .. " Object Copied by Assignment\" << std::endl;",
-			"",
+			-- "\tstd::cout << \"" .. classname .. " Object Copied by Assignment\" << std::endl;",
 			"\tif (this != &rhs) {",
 			"\t}",
-			"return (*this);",
+			"\treturn (*this);",
 			"}",
 			"",
 			classname .. "::~" .. classname .. "( void )",
@@ -222,3 +219,8 @@ vim.keymap.set('n', '<C-w>=', function()
   vim.cmd('wincmd =')
   vim.cmd("NvimTreeResize 25")
 end, { noremap = true, silent = true })
+
+vim.keymap.set('n', 'th', 'gT', { noremap = true })
+vim.keymap.set('n', 'tl', 'gt', { noremap = true })
+vim.keymap.set('n', 't[', 'gT', { noremap = true })
+vim.keymap.set('n', 't]', 'gt', { noremap = true })
