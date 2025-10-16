@@ -65,10 +65,14 @@ vim.wo.foldnestmax = 1
 
 -- Define user command once globally (outside autocmd)
 vim.api.nvim_create_user_command("CloseLevel1Folds", function()
-  for l = 1, vim.fn.line('$') do
-    if vim.fn.foldlevel(l) == 1 and vim.fn.foldclosed(l) == -1 then
-      vim.cmd(l .. "foldclose")
-    end
+  -- for l = 1, vim.fn.line('$') do
+  --   if vim.fn.foldlevel(l) == 1 and vim.fn.foldclosed(l) == -1 then
+  --     vim.cmd(l .. "foldclose")
+  --   end
+  -- end
+  while vim.fn.line('.') < vim.fn.line('$') do
+      vim.cmd("normal! ]]")
+	  vim.cmd("foldclose")
   end
 end, {})
 
@@ -84,8 +88,8 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.foldlevelstart = 1   -- global foldlevelstart
 
     vim.schedule(function()
-      vim.cmd("normal! zR")        -- close all folds
-      vim.cmd("CloseLevel1Folds")   -- open level 1 folds
+      vim.cmd("normal! zR")       	-- open all folds
+      vim.cmd("CloseLevel1Folds")   -- close level 1 folds
     end)
   end,
 })
