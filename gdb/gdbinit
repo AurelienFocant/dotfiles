@@ -4,3 +4,11 @@ set print symbol-filename on
 set print array
 set print union
 set print vtbl
+
+python
+import os
+glibc_src_path = "/usr/src/glibc/glibc-2.41"
+
+if os.path.exists(glibc_src_path) :
+	gdb.execute('set subsitute-path ./ {}'.format(glibc_src_path))
+end
