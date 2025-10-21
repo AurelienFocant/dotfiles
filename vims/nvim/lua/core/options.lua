@@ -69,7 +69,9 @@ function closeOnlyLevel1Folds()
 	vim.cmd("normal! zR")      	-- open all folds
 	while vim.fn.line('.') < vim.fn.line('$') do	-- while current line is not last line
 		vim.cmd("normal! ]]")	-- go to next section
-		vim.cmd("foldclose")	-- close that fold
+		if vim.fn.line('.') ~= vim.fn.line('$') then	-- while current line is not last line
+			vim.cmd("foldclose")	-- close that fold
+		end
 	end							-- repeat
 	vim.cmd("normal! gg")		-- go to top of file
 end
@@ -95,7 +97,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			closeOnlyLevel1Folds()
 			vim.cmd("normal! 'f")
 		end, { noremap = true, silent = true })
-end,
+	end,
 })
 
 -- Add path and tags
