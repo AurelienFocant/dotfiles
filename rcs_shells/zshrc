@@ -69,7 +69,7 @@ fi
 export BBR=born2beroot.ddns.net
 alias bbr="ssh b2b"
 alias bbv="ssh b3b"
-alias xsel="xsel --clipboard"
+[[ $(uname) == "Darwin" ]] && alias xsel="pbcopy" || alias xsel="xsel --clipboard"
 #----------------------------------------------------------------------------------------#
 
 # ssh-agent should start and add keys every time a shell is launched
