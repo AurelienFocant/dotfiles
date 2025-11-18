@@ -73,7 +73,7 @@ alias bbv="ssh b3b"
 #----------------------------------------------------------------------------------------#
 
 # ssh-agent should start and add keys every time a shell is launched
-ssh_keys=("github" "vogsphere" "debian_vm" "debianVPN" "debianDOCKER")
+ssh_keys=("github" "vogsphere" "debianVM" "debianVPN" "debianDOCKER")
 
 # ----- macOS ----- #
 # on macOS M2 MBA, ssh-agent loads automatically when ssh-add is called
