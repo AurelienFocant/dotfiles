@@ -85,7 +85,9 @@ ssh_keys=("github" "vogsphere" "debianVM" "debianVPN" "debianDOCKER")
 if uname -a | grep --quiet -E "Darwin.*arm64"; then
 	for k in ${ssh_keys[@]}; do
 		key="${HOME}/.ssh/${k}"
-		ssh-add -T ${key} &>/dev/null || ssh-add ${key} --apple-load-keychain
+		if [ -f $key ]; then
+			ssh-add -T ${key} &>/dev/null || (ssh-add ${key} --apple-load-keychain)
+		fi
 	done
 fi
 
@@ -103,7 +105,9 @@ if uname -a | grep --quiet -E "Linux"; then
 
 	for k in ${ssh_keys[@]}; do
 		key="${HOME}/.ssh/${k}"
-		ssh-add -T ${key} &>/dev/null || ssh-add ${key} 2>/dev/null
+		if [ -f $key ]; then
+			ssh-add -T ${key} &>/dev/null || ssh-add ${key} 2>/dev/null
+		fi
 	done
 fi
 
