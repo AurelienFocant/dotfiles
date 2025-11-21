@@ -61,7 +61,18 @@ vim.opt.foldmethod = "syntax"
 vim.opt.foldlevelstart = 0
 vim.opt.foldcolumn = "1"
 vim.api.nvim_set_hl(0, "Folded", {  bg = "NONE" })
-vim.api.nvim_set_keymap("n", "<space>", "za", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<space>", "j[[za", { noremap = true })
+vim.keymap.set("n", "<space>",
+	function ()
+		if (vim.fn.foldlevel('.') >= 1) then
+			if (vim.fn.foldclosed('.') == vim.fn.line('.')) then
+				vim.cmd("normal! za")
+			else
+				vim.cmd("normal! j[[za")
+			end
+		end
+	end,
+	{ noremap = true })
 vim.wo.foldnestmax = 1
 
 function closeOnlyLevel1Folds()
