@@ -4,6 +4,3 @@
 [submodule "wireguardConfig"]
 	path = wireguardConfig
 	url = git@github.com:AurelienFocant/wireguardConfig.git
-[submodule "tmux/tpm"]
-	path = tmux/tpm
-	url = https://github.com/tmux-plugins/tpm.git
