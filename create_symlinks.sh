@@ -22,3 +22,6 @@ rm -rf $HOME/.ssh/config && ln -sfv "$dotfile_dir/ssh/config" "$HOME/.ssh"
 mkdir -p $HOME/.config
 rm -rf "$HOME/.config/nvim" && ln -sfv "$dotfile_dir/vims/nvim" "$HOME/.config"
 rm -rf "$HOME/.nvimrc" && ln -sfv "$dotfile_dir/vims/nvim/lua" "$HOME/.nvimrc"
+
+# create symlink for tmux.config
+ln -sfv "$dotfile_dir/tmux/conf/tmux.core.conf" "$HOME/.tmux.conf"
