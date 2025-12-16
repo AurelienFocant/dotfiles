@@ -188,3 +188,12 @@ if [[ $0 =~ bash ]]; then
     . /etc/bash_completion
 	fi
 fi
+
+
+if [[ $0 =~ bash ]]; then
+	eval "$(starship init bash)"
+elif [[ $0 =~ zsh ]]; then
+	eval "$(starship init zsh)"
+fi
+
+

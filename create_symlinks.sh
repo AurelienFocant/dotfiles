@@ -25,3 +25,6 @@ rm -rf "$HOME/.nvimrc" && ln -sfv "$dotfile_dir/vims/nvim/lua" "$HOME/.nvimrc"
 
 # create symlink for tmux.config
 ln -sfv "$dotfile_dir/tmux/conf/tmux.core.conf" "$HOME/.tmux.conf"
+
+# create symlink for starship shell prompt
+ln -sfv "$dotfile_dir/starship/starship.toml" "$HOME/.config/starship.toml"
