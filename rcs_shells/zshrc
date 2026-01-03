@@ -86,7 +86,7 @@ if uname -a | grep --quiet -E "Darwin.*arm64"; then
 	for k in ${ssh_keys[@]}; do
 		key="${HOME}/.ssh/${k}"
 		if [ -f $key ]; then
-			ssh-add -T ${key} &>/dev/null || (ssh-add ${key} --apple-load-keychain)
+			ssh-add -T ${key} &>/dev/null || (ssh-add ${key} --apple-load-keychain 2>&1 | grep -q keychain && ssh-add ${key})
 		fi
 	done
 fi
