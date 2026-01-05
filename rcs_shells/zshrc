@@ -190,10 +190,12 @@ if [[ $0 =~ bash ]]; then
 fi
 
 
-if [[ $0 =~ bash ]]; then
-	eval "$(starship init bash)"
-elif [[ $0 =~ zsh ]]; then
-	eval "$(starship init zsh)"
+#-----------------------#
+# starship colored prompt
+if starship --version &>/dev/null; then
+	if [[ $0 =~ bash ]]; then
+		eval "$(starship init bash)"
+	elif [[ $0 =~ zsh ]]; then
+		eval "$(starship init zsh)"
+	fi
 fi
-
-
