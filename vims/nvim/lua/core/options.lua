@@ -76,6 +76,7 @@ vim.keymap.set("n", "<space>",
 vim.wo.foldnestmax = 1
 
 function closeOnlyLevel1Folds()
+	vim.cmd("normal! mq")		-- mark q
 	vim.cmd("normal! gg")		-- go to top of file
 	vim.cmd("normal! zR")      	-- open all folds
 	while vim.fn.line('.') < vim.fn.line('$') do	-- while current line is not last line
@@ -84,7 +85,7 @@ function closeOnlyLevel1Folds()
 			vim.cmd("foldclose")	-- close that fold
 		end
 	end							-- repeat
-	vim.cmd("normal! gg")		-- go to top of file
+	vim.cmd("normal! 'q")		-- go back to q
 end
 
 -- Create autocmd with augroup to avoid duplicates
@@ -92,7 +93,7 @@ vim.api.nvim_create_augroup("MyFoldSettings", { clear = true })
 
 -- Folding for OOP languages to be able to close Classes that are inside Classes
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "java", "cpp" },
+	pattern = { "java", "hpp" },
 	group = "MyFoldSettings",
 	callback = function()
 		vim.wo.foldnestmax = 2
