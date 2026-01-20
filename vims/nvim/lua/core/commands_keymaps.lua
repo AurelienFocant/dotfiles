@@ -38,6 +38,8 @@ vim.api.nvim_create_user_command(
 local function Save_Session()
     if (vim.fn.isdirectory('misc') == 1) then
         vim.cmd('mksession! misc/Session.vim')
+	else
+        vim.cmd('mksession! Session.vim')
 	end
 	vim.cmd("qa")
 end
