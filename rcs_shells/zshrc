@@ -21,27 +21,19 @@ export LC_COLLATE=C	# ensures ls sort uppercase first
 
 #----------------------------------------------------------------------------------------#
 alias src="source ~/.zshrc"
-export PATH=$PATH:$HOME/dotfiles/my_scripts
-export PATH=$PATH:$HOME/dotfiles/my_scripts/git_wrappers
-export PATH=$PATH:$HOME/dotfiles/my_scripts/vim
-export PATH=$PATH:$HOME/dotfiles/my_scripts/colors
 #----------------------------------------------------------------------------------------#
 alias tags=$HOME/dotfiles/my_scripts/get_ctags.sh
 alias prot=$HOME/dotfiles/my_scripts/my_prototypes.sh
 #----------------------------------------------------------------------------------------#
 alias gil="git log --oneline --graph --color=always -n20"
 alias gila="git log --oneline --graph --all --color=always -n20"
-alias gut=$HOME/dotfiles/my_scripts/git_wrappers/git_update.sh
-alias gst=$HOME/dotfiles/my_scripts/git_wrappers/git_status_colored.sh
-gim() {
-	for branch in `git branch -vv | awk '{if ($1 != "*") {print $1} else {print $2}}'`; do
-		echo $branch
-		git switch $branch
-		git merge;
-	done
-}
 alias gib="git branch -vv"
 alias giba="git branch -avv"
+
+git_wrappers="$HOME/dotfiles/my_scripts/git_wrappers/"
+alias gut=${git_wrappers}/git_update.sh
+alias gst=${git_wrappers}/git_status_colored.sh
+alias gim=${git_wrappers}/git_merge_all_branches.sh
 #----------------------------------------------------------------------------------------#
 alias vim="nvim"
 alias svi=$HOME/dotfiles/my_scripts/vim/vim_session.sh
