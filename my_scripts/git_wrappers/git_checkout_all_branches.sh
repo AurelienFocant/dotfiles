@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source git_wrappers.sh
+source $DOTFILES/my_scripts/git_wrappers/git_wrappers.sh
 
 branches=$(git branch --format="%(refname:short)")
 echo $branches

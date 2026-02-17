@@ -1,7 +1,7 @@
 #! /bin/bash
 
-source my_ansi_colors
-source git_wrappers.sh
+source $DOTFILES/my_scripts/colors/my_ansi_colors
+source $DOTFILES/my_scripts/git_wrappers/git_wrappers.sh
 
 if [ -d .git ]; then
 	git_fetch_and_status

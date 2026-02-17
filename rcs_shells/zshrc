@@ -20,6 +20,7 @@ fi
 export LC_COLLATE=C	# ensures ls sort uppercase first
 
 #----------------------------------------------------------------------------------------#
+export DOTFILES=$HOME/dotfiles
 alias src="source ~/.zshrc"
 #----------------------------------------------------------------------------------------#
 alias tags=$HOME/dotfiles/my_scripts/get_ctags.sh
@@ -30,7 +31,7 @@ alias gila="git log --oneline --graph --all --color=always -n20"
 alias gib="git branch -vv"
 alias giba="git branch -avv"
 
-git_wrappers="$HOME/dotfiles/my_scripts/git_wrappers/"
+git_wrappers="$HOME/dotfiles/my_scripts/git_wrappers"
 alias gut=${git_wrappers}/git_update.sh
 alias gst=${git_wrappers}/git_status_colored.sh
 alias gim=${git_wrappers}/git_merge_all_branches.sh

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source my_ansi_colors
+source $DOTFILES/my_scripts/colors/my_ansi_colors
 
 git_status_colored_branch () {
 	current_branch=$(git branch --show-current)		
