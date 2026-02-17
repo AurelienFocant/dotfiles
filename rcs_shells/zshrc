@@ -55,12 +55,11 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 #----------------------------------------------------------------------------------------#
-
 #----------------------------------------------------------------------------------------#
 # export BBR=born2beroot.duckdns.org
 export BBR=born2beroot.ddns.net
-alias bbr="ssh b2b"
-alias bbv="ssh b3b"
+#----------------------------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------#
 [[ $(uname) == "Darwin" ]] && alias xsel="pbcopy" || alias xsel="xsel --clipboard"
 #----------------------------------------------------------------------------------------#
 
@@ -127,26 +126,11 @@ elif echo $0 | grep -qi bash; then
 	export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 fi
-HISTSIZE=99999999
-SAVEHIST=99999999
+HISTSIZE=999999999999999
+SAVEHIST=999999999999999
 #----------------------------------------------------------------------------------------#
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-if [ -f ~/.local/bin/oh-my-posh ]; then
-	export PATH=$PATH:/home/aurel/.local/bin
-	eval "$(oh-my-posh init zsh --config ~/.local/bin/stelbent-compact.minimal.omp.json)" 
-fi
-
-if uname | grep -qi Linux; then
-	if echo $0 | grep zsh; then
-		setopt PROMPT_SUBST
-		PROMPT='%* %F{green}%n@%m%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
-	fi
-fi
-
-# if [[ "$(uname)" = "Linux" ]] && [[ ! $(uname -n) =~ "s19" ]] ; then
-
-
+# HomeBrew
 if [ -d /home/linuxbrew ]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -157,7 +141,9 @@ if [ -f ${HOME}/homebrew/bin/brew ]; then
 	eval "$(${HOME}/homebrew/bin/brew shellenv)"
 fi
 
-# -- add JAVA tt PATH
+# -- add code of VSCode to PATH
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# -- add JAVA to PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:${PATH}"
 
 # source fzf
