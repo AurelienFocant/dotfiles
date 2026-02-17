@@ -1,17 +1,13 @@
 #! /bin/bash
 
-source gut.sh
+source git_wrappers.sh
 
-branches=$(	git branch -vv | 
-			awk	'{ 
-			if ($1=="*")	{print $2}
-			else			{print $1}
-			}'
-)
+branches=$(git branch --format="%(refname:short)")
+echo $branches
 
 git_status_all_branches () {
-	print_pwd
-		for branch in $branches; do
+	print_pwd()
+	for branch in $branches; do
 		git checkout $branch --quiet
 		echo "--------------------------------------"
 		if git status -v | grep --quiet "behind\|ahead\|diverged"; then
