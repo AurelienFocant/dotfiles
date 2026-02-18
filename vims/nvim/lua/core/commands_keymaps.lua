@@ -226,3 +226,5 @@ vim.keymap.set('n', 'th', 'gT', { noremap = true })
 vim.keymap.set('n', 'tl', 'gt', { noremap = true })
 vim.keymap.set('n', 't[', 'gT', { noremap = true })
 vim.keymap.set('n', 't]', 'gt', { noremap = true })
+-- ======================= ======================= ======================= ======================= --
+
