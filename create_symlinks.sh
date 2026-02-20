@@ -30,4 +30,4 @@ ln -sfv "$dotfile_dir/tmux/conf/tmux.core.conf" "$HOME/.tmux.conf"
 ln -sfv "$dotfile_dir/starship/starship.toml" "$HOME/.config/starship.toml"
 
 # create symlink for my_scripts directory
-ln -sfv "$dotfile_dir/my_scripts" "$HOME/my_scripts"
+rm -rf $HOME/my_scripts && ln -sfv "$dotfile_dir/my_scripts/" "$HOME/my_scripts"
