@@ -39,6 +39,8 @@ alias gim=${git_wrappers}/git_merge_all_branches.sh
 alias vim="nvim"
 alias svi=$HOME/dotfiles/my_scripts/vim/vim_session.sh
 #----------------------------------------------------------------------------------------#
+alias make="make -j4"
+#----------------------------------------------------------------------------------------#
 alias pd="pushd"
 alias dv="dirs -v"
 pdv () {
