@@ -9,11 +9,27 @@ local function equalize_everything()
   local socket = vim.split(vim.env.TMUX, ",")[1]
 
   -- Count Neovim windows
+  local wins = vim.api.nvim_tabpage_list_wins(0)
   local nvim_wins = #vim.api.nvim_tabpage_list_wins(0)
+
+
 
   -- Count tmux panes (correct way)
   local pane_list = vim.fn.systemlist({ "tmux", "-S", socket, "list-panes" })
   local pane_count = #pane_list
+
+  -- for k, v in pairs(pane_list) do
+  --  print(k)
+  --  print(v)
+  -- end
+
+  local pane_sizes = vim.fn.systemlist({ "tmux", "-S", socket, "list-panes", "-F", "#{pane_width}" })
+  for k, v in pairs(pane_sizes) do
+	  print(k)
+	  print(v)
+  end
+
+
 
   if pane_count <= 1 then
     return
@@ -54,3 +70,4 @@ local function equalize_everything()
   })
 end
 
+equalize_everything()
