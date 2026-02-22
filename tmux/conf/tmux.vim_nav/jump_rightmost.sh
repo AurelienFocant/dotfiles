@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Find the rightmost pane
+rightmost=$(tmux list-panes -F "#{pane_index} #{pane_right}" | sort -nrk2 | head -1 | cut -d' ' -f1)
+
+# Focus the rightmost pane
+tmux select-pane -t "$rightmost"
+
+# If that pane is running Vim, send M-t to Vim
+if tmux list-panes -F "#{pane_current_command}" -t "$rightmost" | grep -iq 'vim'; then
+    tmux send-keys -t "$rightmost" M-t
+fi
