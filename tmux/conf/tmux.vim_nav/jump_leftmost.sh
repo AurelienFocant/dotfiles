@@ -8,5 +8,5 @@ tmux select-pane -t "$leftmost"
 
 # If that pane is running Vim, send M-t to Vim
 if tmux list-panes -F "#{pane_index} #{pane_current_command}" |  awk -v x=$leftmost '$1 == x' | grep -iq 'vim'; then
-	tmux send-keys -t "$rightmost" 'Escape' '' ':wincmd t' 'Enter'
+	tmux send-keys -t "$leftmost" 'Escape' '' ':wincmd t' 'Enter'
 fi
