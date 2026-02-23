@@ -7,6 +7,6 @@ rightmost=$(tmux list-panes -F "#{pane_index} #{pane_right}" | sort -nrk2 | head
 tmux select-pane -t "$rightmost"
 
 # If that pane is running Vim, send M-t to Vim
-if tmux list-panes -F "#{pane_current_command}" -t "$rightmost" | grep -iq 'vim'; then
+if tmux list-panes -F "#{pane_index} #{pane_current_command}" |  awk -v x=$rightmost '$1 == x' | grep -iq 'vim'; then
 	tmux send-keys -t "$rightmost" 'Escape' '' ':wincmd b' 'Enter'
 fi
