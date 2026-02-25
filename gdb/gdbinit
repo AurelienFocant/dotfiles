@@ -1,3 +1,8 @@
+set history save on
+set history size unlimited
+set history remove-duplicates 3
+set history expansion on
+
 set print pretty
 set print object
 set print symbol-filename on

@@ -22,6 +22,8 @@ export LC_COLLATE=C	# ensures ls sort uppercase first
 #----------------------------------------------------------------------------------------#
 export DOTFILES=$HOME/dotfiles
 alias src="source ~/.zshrc"
+
+export GDBHISTFILE="$HOME/.gdb_history"
 #----------------------------------------------------------------------------------------#
 alias tags=$HOME/dotfiles/my_scripts/get_ctags.sh
 alias prot=$HOME/dotfiles/my_scripts/my_prototypes.sh
