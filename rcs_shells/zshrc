@@ -181,4 +181,15 @@ if starship --version &>/dev/null; then
 	elif [[ $0 =~ zsh ]]; then
 		eval "$(starship init zsh)"
 	fi
+else
+	if uname | grep -qi Linux; then
+		if echo $0 | grep zsh; then
+			setopt PROMPT_SUBST
+			PROMPT='%* %F{green}%n@%m%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+		fi
+	fi
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
